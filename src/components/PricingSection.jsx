@@ -18,14 +18,25 @@ const pricingData = [
         category: "Bridal & Event Glam",
         services: [
             { name: "Bridal Makeup (Full Package)", price: "Starting From ₹8,000" },
+            { name: "Engagement Makeup ", price: "Starting From ₹5,000" },
             { name: "Party/Cocktail Makeup", price: "Starting From ₹2,500" },
             { name: "Occasion Hair Styling", price: "Starting From ₹500" },
+            { name: "Mahendi", price: "Starting From ₹300" },
+        ],
+    },
+    {
+        category: "Hair Styling & Treatments",
+        services: [
+            { name: "Hair Spa", price: "Starting From ₹600" },
+            { name: "Straightening/Smoothening/Rebounding", price: "Starting From ₹3,000" },
+            { name: "Hair Treatment", price: "Starting From ₹4,000" },
+            { name: "Haircut", price: "Starting From ₹300" },
         ],
     },
     {
         category: "Essential Maintenance",
         services: [
-            { name: "Eyebrow Threading", price: "₹50" },
+            { name: "Eyebrow Threading", price: "₹40" },
             { name: "Upper Lip/Chin Threading", price: "₹30" },
             { name: "Full Face Waxing", price: "₹300" },
         ],
@@ -43,7 +54,7 @@ const pricingData = [
         services: [
             { name: "Classic Manicure", price: "₹400" },
             { name: "Spa Pedicure", price: "₹600" },
-            { name: "Gel Polish Application", price: "₹800" },
+            { name: "Hand/Leg Waxing", price: "₹800" },
         ],
     },
 ];
