@@ -2,7 +2,7 @@ import { Heart, Award, Users } from "lucide-react";
 
 export const AboutSection = () => {
     return (
-        <section className="py-20 gradient-subtle">
+        <section className="scroll-mt-24 py-20 gradient-subtle">
             <div className="container mx-auto px-4">
                 <div className="max-w-4xl mx-auto text-center space-y-12">
                     <div className="space-y-4">

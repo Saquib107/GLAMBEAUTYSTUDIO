@@ -61,7 +61,7 @@ const pricingData = [
 
 export const PricingSection = () => {
     return (
-        <section id="pricing" className="py-20 bg-[#faf7f4]">
+        <section id="pricing" className="scroll-mt-24 py-20 bg-[#faf7f4]">
             <div className="container mx-auto max-w-6xl px-4">
                 {/* Heading */}
                 <div className="mb-14 text-center">

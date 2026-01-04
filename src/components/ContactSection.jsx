@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export const ContactSection = () => {
     return (
-        <section className="bg-background py-20" id="contact">
+        <section className="scroll-mt-24 bg-background py-20" id="contact">
             <div className="container mx-auto px-4">
                 <div className="mx-auto max-w-4xl">
                     {/* Heading */}

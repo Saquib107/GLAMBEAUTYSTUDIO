@@ -9,7 +9,7 @@ export const HeroSection = () => {
 
     return (
         <section
-            className="relative flex min-h-screen items-center justify-center overflow-hidden"
+            className="scroll-mt-24 relative flex min-h-screen items-center justify-center overflow-hidden"
             id="hero"
         >
             {/* Base image */}
