@@ -41,78 +41,86 @@ const pricingData = [
             { name: "Full Face Waxing", price: "₹300" },
         ],
     },
+    {
+        category: "Skincare & Facials",
+        services: [
+            { name: "Basic Clean-Up", price: "₹600" },
+            { name: "Signature Luxury Facial", price: "₹1,200" },
+            { name: "Hydrating Gold Facial", price: "₹2,000" },
+        ],
+    },
+    {
+        category: "Hands & Feet",
+        services: [
+            { name: "Classic Manicure", price: "₹400" },
+            { name: "Spa Pedicure", price: "₹600" },
+            { name: "Hand / Leg Waxing", price: "₹800" },
+        ],
+    },
 ];
 
 export const PricingSection = () => {
     return (
-        <section id="pricing" className="py-20 bg-background">
-            <div className="container mx-auto px-4 max-w-6xl">
+        <section id="pricing" className="py-20 bg-[#faf7f4]">
+            <div className="container mx-auto max-w-6xl px-4">
                 {/* Heading */}
-                <div className="mb-12 text-center space-y-4">
-                    <h2 className="font-serif text-4xl md:text-5xl font-semibold">
-                        Services & Pricing
+                <div className="mb-14 text-center">
+                    <h2 className="font-serif text-4xl md:text-5xl text-[#3b2f2f]">
+                        Services & Pricing Guide
                     </h2>
-                    <div className="mx-auto h-1 w-24 rounded-full bg-primary" />
+                    <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-[#e2a173]" />
                 </div>
 
-                <div className="space-y-8">
+                {/* Categories */}
+                <div className="space-y-10">
                     {pricingData.map((category, idx) => (
-                        <Card key={idx} className="border border-border/50">
-                            <CardHeader className="bg-primary/5">
-                                <CardTitle className="font-serif text-2xl md:text-3xl">
+                        <Card
+                            key={idx}
+                            className="rounded-2xl border border-black/5 bg-white shadow-sm"
+                        >
+                            <CardHeader className="pb-4">
+                                <CardTitle className="font-serif text-2xl text-[#3b2f2f]">
                                     {category.category}
                                 </CardTitle>
                             </CardHeader>
 
-                            <CardContent>
-                                {/* ✅ MOBILE VIEW */}
-                                <div className="space-y-4 md:hidden">
-                                    {category.services.map((service, i) => (
-                                        <div
-                                            key={i}
-                                            className="flex items-center justify-between border-b pb-3 last:border-none"
-                                        >
-                                            <span className="text-sm text-foreground">
-                                                {service.name}
-                                            </span>
-                                            <span className="text-sm font-semibold text-primary">
-                                                {service.price}
-                                            </span>
-                                        </div>
-                                    ))}
-                                </div>
+                            <CardContent className="px-4 pb-6">
+                                <Table>
+                                    <TableHeader>
+                                        <TableRow>
+                                            <TableHead className="text-sm font-medium text-muted-foreground">
+                                                Service
+                                            </TableHead>
+                                            <TableHead className="text-right text-sm font-medium text-muted-foreground">
+                                                Price
+                                            </TableHead>
+                                        </TableRow>
+                                    </TableHeader>
 
-                                {/* ✅ DESKTOP TABLE */}
-                                <div className="hidden md:block">
-                                    <Table>
-                                        <TableHeader>
-                                            <TableRow>
-                                                <TableHead className="w-2/3">Service</TableHead>
-                                                <TableHead className="text-right">Price</TableHead>
+                                    <TableBody>
+                                        {category.services.map((service, i) => (
+                                            <TableRow key={i}>
+                                                <TableCell className="py-4 text-sm md:text-base text-[#3b2f2f]">
+                                                    {service.name}
+                                                </TableCell>
+                                                <TableCell className="py-4 text-right text-sm md:text-base font-semibold text-[#e2a173]">
+                                                    {service.price}
+                                                </TableCell>
                                             </TableRow>
-                                        </TableHeader>
-                                        <TableBody>
-                                            {category.services.map((service, i) => (
-                                                <TableRow key={i}>
-                                                    <TableCell>{service.name}</TableCell>
-                                                    <TableCell className="text-right font-semibold text-primary">
-                                                        {service.price}
-                                                    </TableCell>
-                                                </TableRow>
-                                            ))}
-                                        </TableBody>
-                                    </Table>
-                                </div>
+                                        ))}
+                                    </TableBody>
+                                </Table>
                             </CardContent>
                         </Card>
                     ))}
                 </div>
 
                 {/* Note */}
-                <div className="mt-10 rounded-xl border bg-muted/50 p-6">
+                <div className="mt-10 rounded-xl border border-black/5 bg-white p-6">
                     <p className="text-center text-sm text-muted-foreground">
-                        <strong className="text-foreground">Note:</strong> Prices may vary
-                        based on hair length, product selection, and customization.
+                        <strong className="text-[#3b2f2f]">Note:</strong> Prices may vary based
+                        on hair length, products used, and customization. Please contact us
+                        for exact quotes.
                     </p>
                 </div>
             </div>
