@@ -94,7 +94,7 @@ export const ContactSection = () => {
                                         <p className="text-muted-foreground">
                                             Monday – Sunday: 10:00 AM to 8:00 PM
                                             <br />
-                                            Except Friday: 4:00 AM to 8:00 PM
+                                            Except Friday: 4:00 PM to 8:00 PM
                                         </p>
                                     </div>
                                 </div>
