@@ -154,6 +154,7 @@ export const TestimonialCarousel = () => {
                                                 <img
                                                     src={testimonial.image}
                                                     alt={testimonial.name}
+                                                    loading="lazy"
                                                     className="w-16 h-16 rounded-full object-cover border-3 border-[#C99A6B]"
                                                 />
                                                 <div>
