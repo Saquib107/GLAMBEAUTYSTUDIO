@@ -1,6 +1,7 @@
 import { PricingSection } from "@/components/PricingSection";
 import { BrandsMarquee } from "@/components/BrandsMarquee";
 import { GallerySection } from "@/components/GallerySection";
+import { MobileStickyBar } from "@/components/MobileStickyBar";
 import { Navigation } from "@/components/Navigation";
 import { HeroSection } from "@/components/HeroSection";
 import { SignatureServicesSection } from "@/components/SignatureServicesSection";
@@ -71,6 +72,9 @@ const Index = () => {
 
             {/* WhatsApp Button */}
             <WhatsAppButton />
+
+            {/* Mobile Sticky CTA Bar */}
+            <MobileStickyBar />
         </main>
     );
 };
