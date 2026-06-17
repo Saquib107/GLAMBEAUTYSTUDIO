@@ -1,3 +1,6 @@
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import bridalImage from "@/assets/gallery-bridal-1.jpg";
 import studioImage from "@/assets/gallery-studio-1.jpg";
 import hairImage from "@/assets/gallery-hair-1.jpg";
@@ -15,16 +18,56 @@ const galleryImages = [
 ];
 
 export const GallerySection = () => {
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const ctx = gsap.context(() => {
+            gsap.fromTo(".gallery-title, .gallery-subtitle",
+                { opacity: 0, y: 20 },
+                {
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 80%",
+                    },
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.2,
+                    duration: 0.8,
+                    ease: "power3.out",
+                }
+            );
+
+            gsap.fromTo(".gallery-item",
+                { opacity: 0, scale: 0.95 },
+                {
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 70%",
+                    },
+                    opacity: 1,
+                    scale: 1,
+                    stagger: 0.1,
+                    duration: 0.8,
+                    ease: "power3.out",
+                }
+            );
+        }, containerRef);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
-        <section className="scroll-mt-24 py-20 bg-background">
+        <section ref={containerRef} id="gallery" className="scroll-mt-24 py-20 bg-background">
             <div className="container mx-auto px-4">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center space-y-4 mb-12">
-                        <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+                        <h2 className="gallery-title text-4xl md:text-5xl font-bold text-foreground">
                             Our Signature Work
                         </h2>
                         <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-                        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                        <p className="gallery-subtitle text-lg text-muted-foreground max-w-2xl mx-auto">
                             See the difference quality and passion make. Browse our portfolio of flawless transformations.
                         </p>
                     </div>
@@ -33,11 +76,12 @@ export const GallerySection = () => {
                         {galleryImages.map((image, index) => (
                             <div
                                 key={index}
-                                className="group relative aspect-square overflow-hidden rounded-2xl shadow-soft transition-smooth hover:shadow-elegant"
+                                className="gallery-item group relative aspect-square overflow-hidden rounded-2xl shadow-soft transition-smooth hover:shadow-elegant"
                             >
                                 <img
                                     src={image.src}
                                     alt={image.alt}
+                                    loading="lazy"
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-smooth"></div>

@@ -1,5 +1,6 @@
 import { PricingSection } from "@/components/PricingSection";
 import { BrandsMarquee } from "@/components/BrandsMarquee";
+import { GallerySection } from "@/components/GallerySection";
 import { Navigation } from "@/components/Navigation";
 import { HeroSection } from "@/components/HeroSection";
 import { SignatureServicesSection } from "@/components/SignatureServicesSection";
@@ -35,6 +36,11 @@ const Index = () => {
             {/* Beauty Transformations Section */}
             <div id="transformations">
                 <BeautyTransformationsSection />
+            </div>
+
+            {/* Gallery Section */}
+            <div id="portfolio-gallery">
+                <GallerySection />
             </div>
 
             {/* Why Choose Us Section */}
