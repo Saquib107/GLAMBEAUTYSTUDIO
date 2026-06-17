@@ -118,13 +118,18 @@ export const BookingSection = () => {
                                         <h3 className="text-xl font-semibold text-[#2B1D17] mb-2">
                                             Location
                                         </h3>
-                                        <p className="text-[#8B5E3C] leading-relaxed">
+                                        <a 
+                                            href="https://maps.app.goo.gl/cAWHPUfZ1KC7eCrVA?g_st=aw" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className="text-[#8B5E3C] leading-relaxed hover:text-[#C99A6B] transition-colors block"
+                                        >
                                             Shop No - G13, Sahara River View,
                                             <br />
                                             Old Purulia Road, Kumar Basti,
                                             <br />
                                             Mango, Jamshedpur, Jharkhand 831012
-                                        </p>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

@@ -32,13 +32,18 @@ export const ContactSection = () => {
                                         <h3 className="mb-2 font-semibold text-foreground">
                                             Location
                                         </h3>
-                                        <p className="text-muted-foreground">
+                                        <a 
+                                            href="https://maps.app.goo.gl/cAWHPUfZ1KC7eCrVA?g_st=aw" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className="text-muted-foreground hover:text-primary transition-colors block"
+                                        >
                                             Shop No - G13, Sahara River View,
                                             <br />
                                             Old Purulia Road, Kumar Basti,
                                             <br />
                                             Mango, Jamshedpur, Jharkhand 831012
-                                        </p>
+                                        </a>
                                     </div>
                                 </div>
 
