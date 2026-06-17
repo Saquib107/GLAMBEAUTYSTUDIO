@@ -1,3 +1,6 @@
+import { useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
     Table,
     TableBody,
@@ -60,11 +63,51 @@ const pricingData = [
 ];
 
 export const PricingSection = () => {
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const ctx = gsap.context(() => {
+            gsap.fromTo(".pricing-header",
+                { opacity: 0, y: 20 },
+                {
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 80%",
+                    },
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: "power3.out",
+                }
+            );
+
+            gsap.fromTo(".pricing-card",
+                { opacity: 0, y: 30 },
+                {
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 70%",
+                    },
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.15,
+                    duration: 0.8,
+                    delay: 0.1,
+                    ease: "power3.out",
+                }
+            );
+        }, containerRef);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
-        <section id="pricing" className="scroll-mt-24 py-20 bg-[#faf7f4]">
+        <section id="pricing" ref={containerRef} className="scroll-mt-24 py-20 bg-[#faf7f4]">
             <div className="container mx-auto max-w-6xl px-4">
                 {/* Heading */}
-                <div className="mb-14 text-center">
+                <div className="pricing-header mb-14 text-center">
                     <h2 className="font-serif text-4xl md:text-5xl text-[#3b2f2f]">
                         Services & Pricing Guide
                     </h2>
@@ -76,7 +119,7 @@ export const PricingSection = () => {
                     {pricingData.map((category, idx) => (
                         <Card
                             key={idx}
-                            className="rounded-2xl border border-black/5 bg-white shadow-sm"
+                            className="pricing-card rounded-2xl border border-black/5 bg-white shadow-sm"
                         >
                             <CardHeader className="pb-4">
                                 <CardTitle className="font-serif text-2xl text-[#3b2f2f]">
@@ -116,7 +159,7 @@ export const PricingSection = () => {
                 </div>
 
                 {/* Note */}
-                <div className="mt-10 rounded-xl border border-black/5 bg-white p-6">
+                <div className="pricing-card mt-10 rounded-xl border border-black/5 bg-white p-6">
                     <p className="text-center text-sm text-muted-foreground">
                         <strong className="text-[#3b2f2f]">Note:</strong> Prices may vary based
                         on hair length, products used, and customization. Please contact us
