@@ -48,7 +48,50 @@ const services = [
         price: "₹600",
         icon: Leaf,
     },
+    {
+        id: 7,
+        name: "Nail Extensions",
+        description: "Premium gel and acrylic nail extensions with custom nail art designs.",
+        price: "₹1,500",
+        icon: Palette,
+    },
+    {
+        id: 8,
+        name: "Eyelash Extensions",
+        description: "Enhance your eyes with our natural or volume lash extensions.",
+        price: "₹2,000",
+        icon: SparklesIcon,
+    },
+    {
+        id: 9,
+        name: "Full Body Spa",
+        description: "Relaxing full body spa and massage using essential oils.",
+        price: "₹3,500",
+        icon: Leaf,
+    },
+    {
+        id: 10,
+        name: "Eyebrow Threading",
+        description: "Precise eyebrow shaping and threading for a clean look.",
+        price: "₹100",
+        icon: Scissors,
+    },
+    {
+        id: 11,
+        name: "Airbrush Makeup",
+        description: "Flawless and lightweight airbrush makeup for a perfect finish.",
+        price: "₹4,500",
+        icon: Wand2,
+    },
+    {
+        id: 12,
+        name: "Manicure & Pedicure",
+        description: "Luxury hand and foot care spa with premium polish application.",
+        price: "₹800",
+        icon: Droplets,
+    },
 ];
+
 
 export const SignatureServicesSection = () => {
     const containerRef = useRef(null);
