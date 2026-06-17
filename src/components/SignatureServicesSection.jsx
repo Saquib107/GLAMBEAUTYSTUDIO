@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Card, CardContent } from "@/components/ui/card";
 import { Scissors, Wand2, Droplets, Sparkles as SparklesIcon, Palette, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 const services = [
     {
@@ -12,6 +13,7 @@ const services = [
         description: "Stunning HD bridal makeup for your special day with long-lasting finishes.",
         price: "₹5,000",
         icon: Palette,
+        slug: "bridal-makeup"
     },
     {
         id: 2,
@@ -19,6 +21,7 @@ const services = [
         description: "Professional hair styling for every occasion with premium care.",
         price: "₹500",
         icon: Scissors,
+        slug: "hair-treatments"
     },
     {
         id: 3,
@@ -26,6 +29,7 @@ const services = [
         description: "Rejuvenating hair spa treatments to restore shine and health.",
         price: "₹600",
         icon: Droplets,
+        slug: "hair-treatments"
     },
     {
         id: 4,
@@ -33,6 +37,7 @@ const services = [
         description: "Customized facials using premium products for radiant skin.",
         price: "₹1,200",
         icon: SparklesIcon,
+        slug: "facials-skincare"
     },
     {
         id: 5,
@@ -40,6 +45,7 @@ const services = [
         description: "Glamorous makeup looks for parties and special events.",
         price: "₹2,500",
         icon: Wand2,
+        slug: "party-makeup"
     },
     {
         id: 6,
@@ -47,6 +53,7 @@ const services = [
         description: "Professional skincare treatments tailored to your skin type.",
         price: "₹600",
         icon: Leaf,
+        slug: "facials-skincare"
     },
     {
         id: 7,
@@ -54,6 +61,7 @@ const services = [
         description: "Premium gel and acrylic nail extensions with custom nail art designs.",
         price: "₹1,500",
         icon: Palette,
+        slug: "nail-services"
     },
     {
         id: 8,
@@ -61,6 +69,7 @@ const services = [
         description: "Enhance your eyes with our natural or volume lash extensions.",
         price: "₹2,000",
         icon: SparklesIcon,
+        slug: "eyelash-extensions"
     },
     {
         id: 9,
@@ -68,6 +77,7 @@ const services = [
         description: "Relaxing full body spa and massage using essential oils.",
         price: "₹3,500",
         icon: Leaf,
+        slug: "full-body-spa"
     },
     {
         id: 10,
@@ -75,6 +85,7 @@ const services = [
         description: "Precise eyebrow shaping and threading for a clean look.",
         price: "₹100",
         icon: Scissors,
+        slug: "eyebrow-threading"
     },
     {
         id: 11,
@@ -82,6 +93,7 @@ const services = [
         description: "Flawless and lightweight airbrush makeup for a perfect finish.",
         price: "₹4,500",
         icon: Wand2,
+        slug: "bridal-makeup"
     },
     {
         id: 12,
@@ -89,6 +101,7 @@ const services = [
         description: "Luxury hand and foot care spa with premium polish application.",
         price: "₹800",
         icon: Droplets,
+        slug: "nail-services"
     },
 ];
 
@@ -96,6 +109,7 @@ const services = [
 export const SignatureServicesSection = () => {
     const containerRef = useRef(null);
     const cardsRef = useRef([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -195,9 +209,9 @@ export const SignatureServicesSection = () => {
                                         {/* Button */}
                                         <Button
                                             className="w-full bg-[#C99A6B] hover:bg-[#b8894f] text-white rounded-full font-semibold transition-all duration-300"
-                                            onClick={() => scrollToSection("booking")}
+                                            onClick={() => navigate(`/services/${service.slug}`)}
                                         >
-                                            Book Now
+                                            Explore & Book
                                         </Button>
                                     </CardContent>
                                 </Card>
