@@ -336,7 +336,7 @@ export const BookingSection = () => {
                     {/* Map Section */}
                     <div className="mt-16 rounded-2xl overflow-hidden shadow-lg h-96">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3693.0908876467446!2d84.80482!3d22.5794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f4e1c4a4a4a4ab%3A0x1234567890!2sJamshedpur%2C%20Jharkhand!5e0!3m2!1sen!2sin!4v1234567890"
+                            src="https://maps.google.com/maps?q=Shop%20no%20G13,%20Glam%20Beauty%20Studio,%20sahara%20river%20view,%20Old%20Purulia%20Rd,%20Kumar%20Basti,%20Mango,%20Jamshedpur,%20Jharkhand%20831012&t=&z=16&ie=UTF8&iwloc=&output=embed"
                             width="100%"
                             height="100%"
                             style={{ border: 0 }}
