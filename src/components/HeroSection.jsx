@@ -88,7 +88,7 @@ export const HeroSection = () => {
     return (
         <section
             ref={containerRef}
-            className="relative min-h-screen overflow-hidden py-20 lg:py-0"
+            className="relative min-h-screen overflow-hidden pt-16 lg:pt-20 pb-12 flex items-center"
             id="hero"
         >
             {/* Background Gradient */}
@@ -98,10 +98,10 @@ export const HeroSection = () => {
             <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#C99A6B]/10 rounded-full blur-3xl -z-10" />
             <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-[#8B5E3C]/8 rounded-full blur-3xl -z-10" />
 
-            <div className="container mx-auto px-4 h-full">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-screen">
+            <div className="container mx-auto px-4">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                     {/* Left Column */}
-                    <div ref={leftRef} className="space-y-8 pt-16 lg:pt-0">
+                    <div ref={leftRef} className="space-y-8">
                         {/* Badge */}
                         <div className="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/40 backdrop-blur-md border border-white/60 w-fit">
                             <Sparkles className="w-4 h-4 text-[#C99A6B]" />
@@ -158,9 +158,9 @@ export const HeroSection = () => {
                     </div>
 
                     {/* Right Column */}
-                    <div ref={rightRef} className="relative h-96 lg:h-[600px] min-h-[400px] flex items-center justify-center w-full">
+                    <div ref={rightRef} className="relative h-[450px] lg:h-[650px] w-full flex items-center justify-center">
                         {/* Main Hero Image */}
-                        <div className="hero-image relative w-full h-full">
+                        <div className="hero-image relative w-full h-full max-w-[550px] mx-auto">
                             <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl">
                                 <img
                                     src={heroImage}
