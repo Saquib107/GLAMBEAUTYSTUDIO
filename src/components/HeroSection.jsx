@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.jpg";
-import { Star, Sparkles, Check } from "lucide-react";
+import { Star, Sparkles, Check, Phone, Clock } from "lucide-react";
 
 export const HeroSection = () => {
     const containerRef = useRef(null);
@@ -110,9 +110,9 @@ export const HeroSection = () => {
 
                         {/* Main Headline */}
                         <div className="space-y-4">
-                            <h1 className="hero-headline font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-[#2B1D17] leading-tight">
-                                Where Beauty Meets
-                                <span className="block text-[#C99A6B]">Confidence</span>
+                            <h1 className="hero-headline font-serif text-5xl md:text-6xl font-bold text-[#2B1D17] leading-tight">
+                                Luxury Bridal Makeup & Beauty Services in
+                                <span className="block text-[#C99A6B]">Jamshedpur</span>
                             </h1>
 
                             {/* Subheadline */}
@@ -154,6 +154,18 @@ export const HeroSection = () => {
                             >
                                 View Our Work
                             </Button>
+                        </div>
+
+                        {/* Contact & Hours */}
+                        <div className="flex flex-col sm:flex-row gap-6 pt-2 text-sm font-medium text-[#8B5E3C]">
+                            <div className="flex items-center gap-2">
+                                <Phone className="w-5 h-5 text-[#C99A6B]" />
+                                <span>+91 98765 43210</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Clock className="w-5 h-5 text-[#C99A6B]" />
+                                <span>Mon - Sun: 10:00 AM - 8:00 PM</span>
+                            </div>
                         </div>
                     </div>
 
