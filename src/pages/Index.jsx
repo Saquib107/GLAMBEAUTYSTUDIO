@@ -1,4 +1,5 @@
 import { PricingSection } from "@/components/PricingSection";
+import { BrandsMarquee } from "@/components/BrandsMarquee";
 import { Navigation } from "@/components/Navigation";
 import { HeroSection } from "@/components/HeroSection";
 import { SignatureServicesSection } from "@/components/SignatureServicesSection";
@@ -45,6 +46,9 @@ const Index = () => {
             <div id="offers">
                 <SpecialOffersSection />
             </div>
+
+            {/* Brands Marquee */}
+            <BrandsMarquee />
 
             {/* Testimonial Carousel */}
             <div id="testimonials">
