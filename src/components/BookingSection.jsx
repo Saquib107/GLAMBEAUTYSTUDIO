@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 
@@ -18,23 +19,39 @@ export const BookingSection = () => {
     const [submitted, setSubmitted] = useState(false);
 
     useEffect(() => {
-        const ctx = gsap.context(() => {
-            gsap.from(".booking-title, .booking-subtitle", {
-                opacity: 0,
-                y: 20,
-                stagger: 0.2,
-                duration: 0.8,
-                ease: "power3.out",
-            });
+        gsap.registerPlugin(ScrollTrigger);
 
-            gsap.from(".booking-card", {
-                opacity: 0,
-                y: 30,
-                stagger: 0.15,
-                duration: 0.8,
-                delay: 0.3,
-                ease: "power3.out",
-            });
+        const ctx = gsap.context(() => {
+            gsap.fromTo(".booking-title, .booking-subtitle",
+                { opacity: 0, y: 20 },
+                {
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 80%",
+                    },
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.2,
+                    duration: 0.8,
+                    ease: "power3.out",
+                }
+            );
+
+            gsap.fromTo(".booking-card",
+                { opacity: 0, y: 30 },
+                {
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 70%",
+                    },
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.15,
+                    duration: 0.8,
+                    delay: 0.1,
+                    ease: "power3.out",
+                }
+            );
         }, containerRef);
 
         return () => ctx.revert();

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 const testimonials = [
@@ -44,22 +45,38 @@ export const TestimonialCarousel = () => {
     const autoplayRef = useRef(null);
 
     useEffect(() => {
-        const ctx = gsap.context(() => {
-            gsap.from(".testimonials-title, .testimonials-subtitle", {
-                opacity: 0,
-                y: 20,
-                stagger: 0.2,
-                duration: 0.8,
-                ease: "power3.out",
-            });
+        gsap.registerPlugin(ScrollTrigger);
 
-            gsap.from(".carousel-container", {
-                opacity: 0,
-                y: 30,
-                duration: 0.8,
-                delay: 0.3,
-                ease: "power3.out",
-            });
+        const ctx = gsap.context(() => {
+            gsap.fromTo(".testimonials-title, .testimonials-subtitle",
+                { opacity: 0, y: 20 },
+                {
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 80%",
+                    },
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.2,
+                    duration: 0.8,
+                    ease: "power3.out",
+                }
+            );
+
+            gsap.fromTo(".carousel-container",
+                { opacity: 0, y: 30 },
+                {
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 70%",
+                    },
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    delay: 0.1,
+                    ease: "power3.out",
+                }
+            );
         }, containerRef);
 
         return () => ctx.revert();

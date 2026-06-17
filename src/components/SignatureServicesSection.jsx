@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Card, CardContent } from "@/components/ui/card";
 import { Scissors, Wand2, Droplets, Sparkles as SparklesIcon, Palette, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -54,25 +55,41 @@ export const SignatureServicesSection = () => {
     const cardsRef = useRef([]);
 
     useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        
         const ctx = gsap.context(() => {
             // Animate section title
-            gsap.from(".services-title, .services-subtitle", {
-                opacity: 0,
-                y: 20,
-                stagger: 0.2,
-                duration: 0.8,
-                ease: "power3.out",
-            });
+            gsap.fromTo(".services-title, .services-subtitle",
+                { opacity: 0, y: 20 },
+                {
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 80%",
+                    },
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.2,
+                    duration: 0.8,
+                    ease: "power3.out",
+                }
+            );
 
             // Staggered animation for service cards
-            gsap.from(".service-card", {
-                opacity: 0,
-                y: 30,
-                stagger: 0.12,
-                duration: 0.8,
-                delay: 0.3,
-                ease: "power3.out",
-            });
+            gsap.fromTo(".service-card",
+                { opacity: 0, y: 30 },
+                {
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 70%",
+                    },
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.12,
+                    duration: 0.8,
+                    delay: 0.1,
+                    ease: "power3.out",
+                }
+            );
         }, containerRef);
 
         return () => ctx.revert();

@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Star, Award, Sparkles, Heart, Users, Shield } from "lucide-react";
 
 const features = [
@@ -45,25 +46,41 @@ export const WhyChooseUsSection = () => {
     const containerRef = useRef(null);
 
     useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+        
         const ctx = gsap.context(() => {
             // Animate section title
-            gsap.from(".why-title, .why-subtitle", {
-                opacity: 0,
-                y: 20,
-                stagger: 0.2,
-                duration: 0.8,
-                ease: "power3.out",
-            });
+            gsap.fromTo(".why-title, .why-subtitle",
+                { opacity: 0, y: 20 },
+                {
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 80%",
+                    },
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.2,
+                    duration: 0.8,
+                    ease: "power3.out",
+                }
+            );
 
             // Staggered animation for feature cards
-            gsap.from(".why-card", {
-                opacity: 0,
-                y: 30,
-                stagger: 0.1,
-                duration: 0.8,
-                delay: 0.3,
-                ease: "power3.out",
-            });
+            gsap.fromTo(".why-card",
+                { opacity: 0, y: 30 },
+                {
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 70%",
+                    },
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.1,
+                    duration: 0.8,
+                    delay: 0.1,
+                    ease: "power3.out",
+                }
+            );
         }, containerRef);
 
         return () => ctx.revert();

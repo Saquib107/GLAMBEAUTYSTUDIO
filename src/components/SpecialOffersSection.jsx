@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Zap } from "lucide-react";
@@ -38,28 +39,48 @@ export const SpecialOffersSection = () => {
     const containerRef = useRef(null);
 
     useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
         const ctx = gsap.context(() => {
             // Animate section title
-            gsap.from(".offers-title, .offers-subtitle", {
-                opacity: 0,
-                y: 20,
-                stagger: 0.2,
-                duration: 0.8,
-                ease: "power3.out",
-            });
+            gsap.fromTo(".offers-title, .offers-subtitle",
+                { opacity: 0, y: 20 },
+                {
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 80%",
+                    },
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.2,
+                    duration: 0.8,
+                    ease: "power3.out",
+                }
+            );
 
             // Staggered animation for offer cards
-            gsap.from(".offer-card", {
-                opacity: 0,
-                scale: 0.95,
-                stagger: 0.15,
-                duration: 0.8,
-                delay: 0.3,
-                ease: "back.out",
-            });
+            gsap.fromTo(".offer-card",
+                { opacity: 0, scale: 0.95 },
+                {
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 70%",
+                    },
+                    opacity: 1,
+                    scale: 1,
+                    stagger: 0.15,
+                    duration: 0.8,
+                    delay: 0.1,
+                    ease: "back.out",
+                }
+            );
 
             // Pulse animation on discount badges
             gsap.to(".discount-badge", {
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top 60%",
+                },
                 scale: 1.05,
                 duration: 1.5,
                 repeat: -1,

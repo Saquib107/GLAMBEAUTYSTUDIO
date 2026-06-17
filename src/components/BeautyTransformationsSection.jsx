@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 const transformations = [
@@ -53,23 +54,39 @@ export const BeautyTransformationsSection = () => {
     const [sliderPositions, setSliderPositions] = useState({});
 
     useEffect(() => {
-        const ctx = gsap.context(() => {
-            gsap.from(".transformations-title, .transformations-subtitle", {
-                opacity: 0,
-                y: 20,
-                stagger: 0.2,
-                duration: 0.8,
-                ease: "power3.out",
-            });
+        gsap.registerPlugin(ScrollTrigger);
 
-            gsap.from(".transformation-card", {
-                opacity: 0,
-                y: 30,
-                stagger: 0.1,
-                duration: 0.8,
-                delay: 0.3,
-                ease: "power3.out",
-            });
+        const ctx = gsap.context(() => {
+            gsap.fromTo(".transformations-title, .transformations-subtitle",
+                { opacity: 0, y: 20 },
+                {
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 80%",
+                    },
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.2,
+                    duration: 0.8,
+                    ease: "power3.out",
+                }
+            );
+
+            gsap.fromTo(".transformation-card",
+                { opacity: 0, y: 30 },
+                {
+                    scrollTrigger: {
+                        trigger: containerRef.current,
+                        start: "top 70%",
+                    },
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.1,
+                    duration: 0.8,
+                    delay: 0.1,
+                    ease: "power3.out",
+                }
+            );
         }, containerRef);
 
         return () => ctx.revert();

@@ -158,9 +158,9 @@ export const HeroSection = () => {
                     </div>
 
                     {/* Right Column */}
-                    <div ref={rightRef} className="relative h-96 lg:h-full min-h-[500px] lg:min-h-screen flex items-center justify-center">
+                    <div ref={rightRef} className="relative h-96 lg:h-[600px] min-h-[400px] flex items-center justify-center w-full">
                         {/* Main Hero Image */}
-                        <div className="hero-image absolute inset-0 lg:relative w-full h-full">
+                        <div className="hero-image relative w-full h-full">
                             <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl">
                                 <img
                                     src={heroImage}

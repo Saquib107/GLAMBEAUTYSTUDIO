@@ -11,13 +11,6 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const Index = () => {
-    const services = useScrollAnimation();
-    const transformations = useScrollAnimation();
-    const whyUs = useScrollAnimation();
-    const offers = useScrollAnimation();
-    const testimonials = useScrollAnimation();
-    const booking = useScrollAnimation();
-
     return (
         <main className="min-h-screen">
             <Navigation />
@@ -28,56 +21,32 @@ const Index = () => {
             </div>
 
             {/* Signature Services Section */}
-            <div
-                id="services"
-                ref={services.ref}
-                className={`transition-all duration-700 ${services.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-            >
+            <div id="services">
                 <SignatureServicesSection />
             </div>
 
             {/* Beauty Transformations Section */}
-            <div
-                id="transformations"
-                ref={transformations.ref}
-                className={`transition-all duration-700 ${transformations.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-            >
+            <div id="transformations">
                 <BeautyTransformationsSection />
             </div>
 
             {/* Why Choose Us Section */}
-            <div
-                id="why-us"
-                ref={whyUs.ref}
-                className={`transition-all duration-700 ${whyUs.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-            >
+            <div id="why-us">
                 <WhyChooseUsSection />
             </div>
 
             {/* Special Offers Section */}
-            <div
-                id="offers"
-                ref={offers.ref}
-                className={`transition-all duration-700 ${offers.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-            >
+            <div id="offers">
                 <SpecialOffersSection />
             </div>
 
             {/* Testimonial Carousel */}
-            <div
-                id="testimonials"
-                ref={testimonials.ref}
-                className={`transition-all duration-700 ${testimonials.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-            >
+            <div id="testimonials">
                 <TestimonialCarousel />
             </div>
 
             {/* Booking Section */}
-            <div
-                id="booking"
-                ref={booking.ref}
-                className={`transition-all duration-700 ${booking.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-            >
+            <div id="booking">
                 <BookingSection />
             </div>
 
