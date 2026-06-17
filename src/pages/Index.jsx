@@ -1,6 +1,7 @@
 import { PricingSection } from "@/components/PricingSection";
 import { BrandsMarquee } from "@/components/BrandsMarquee";
 import { FAQSection } from "@/components/FAQSection";
+import { BusinessFeaturesSection } from "@/components/BusinessFeaturesSection";
 import { GallerySection } from "@/components/GallerySection";
 import { MobileStickyBar } from "@/components/MobileStickyBar";
 import { Navigation } from "@/components/Navigation";
@@ -44,6 +45,9 @@ const Index = () => {
             <div id="portfolio-gallery">
                 <GallerySection />
             </div>
+
+            {/* Business Features Section */}
+            <BusinessFeaturesSection />
 
             {/* Why Choose Us Section */}
             <div id="why-us">
