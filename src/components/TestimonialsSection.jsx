@@ -249,6 +249,102 @@ const testimonials = [
         review: "Amazing service, clean environment, and great results. Highly recommended",
         image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
         rating: 5
+    },
+    {
+        id: 32,
+        name: "Sonam Perveen",
+        role: "Client",
+        review: "Highly recommended! Excellent service at Glam Beauty Studio.",
+        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 33,
+        name: "Syed Zafar",
+        role: "Client",
+        review: "Highly recommended! Excellent service at Glam Beauty Studio.",
+        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 34,
+        name: "Noor Saba",
+        role: "Client",
+        review: "Highly recommended! Excellent service at Glam Beauty Studio.",
+        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 35,
+        name: "Rafique Ahmed",
+        role: "Client",
+        review: "Highly recommended! Excellent service at Glam Beauty Studio.",
+        image: "https://images.unsplash.com/photo-1531123897727-8f129e1bf98c?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 36,
+        name: "Saiqua Naaz",
+        role: "Client",
+        review: "Highly recommended! Excellent service at Glam Beauty Studio.",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 37,
+        name: "Priyanshi Singh",
+        role: "Client",
+        review: "Highly recommended! Excellent service at Glam Beauty Studio.",
+        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 38,
+        name: "Simranjeet Kaur",
+        role: "Client",
+        review: "Highly recommended! Excellent service at Glam Beauty Studio.",
+        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 39,
+        name: "Md Danish",
+        role: "Client",
+        review: "Highly recommended! Excellent service at Glam Beauty Studio.",
+        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 40,
+        name: "Rani Kumari",
+        role: "Client",
+        review: "Highly recommended! Excellent service at Glam Beauty Studio.",
+        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 41,
+        name: "azmi md imtiyaz khan",
+        role: "Client",
+        review: "Highly recommended! Excellent service at Glam Beauty Studio.",
+        image: "https://images.unsplash.com/photo-1531123897727-8f129e1bf98c?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 42,
+        name: "Nagma Khan",
+        role: "Client",
+        review: "Highly recommended! Excellent service at Glam Beauty Studio.",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 43,
+        name: "Adeeba Moin",
+        role: "Client",
+        review: "Highly recommended! Excellent service at Glam Beauty Studio.",
+        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
     }
 ];
 
