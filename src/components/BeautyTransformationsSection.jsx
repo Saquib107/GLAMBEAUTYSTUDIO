@@ -43,8 +43,8 @@ const transformations = [
         id: 6,
         title: "Hair Spa & Styling",
         service: "Hair Spa",
-        before: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=500&fit=crop",
-        after: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=500&fit=crop",
+        before: "/images/hair_spa_before.jpg",
+        after: "/images/hair_spa_after.jpg",
     },
 ];
 
