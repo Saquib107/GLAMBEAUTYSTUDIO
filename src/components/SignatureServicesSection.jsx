@@ -11,7 +11,7 @@ const services = [
         id: 1,
         name: "Bridal Makeup",
         description: "Stunning HD bridal makeup for your special day with long-lasting finishes.",
-        price: "₹5,000",
+        price: "₹10,000",
         icon: Palette,
         slug: "bridal-makeup"
     },
@@ -19,7 +19,7 @@ const services = [
         id: 2,
         name: "Hair Styling",
         description: "Professional hair styling for every occasion with premium care.",
-        price: "₹500",
+        price: "₹3500",
         icon: Scissors,
         slug: "hair-treatments"
     },
@@ -27,7 +27,7 @@ const services = [
         id: 3,
         name: "Facial Treatments",
         description: "Customized facials using premium products for radiant skin.",
-        price: "₹1,200",
+        price: "₹999",
         icon: SparklesIcon,
         slug: "facials-skincare"
     }
@@ -41,7 +41,7 @@ export const SignatureServicesSection = () => {
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        
+
         const ctx = gsap.context(() => {
             // Animate section title
             gsap.fromTo(".services-title, .services-subtitle",
