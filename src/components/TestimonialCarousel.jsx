@@ -10,7 +10,8 @@ const testimonials = [
         service: "Client",
         text: "Loved the service at [ Glam Beauty Parlor ]! 😊 The staff were super friendly and professional. My hair felt amazing post-cut and color - exactly what I wanted! 💇‍♀️ Highly recommend trying them out! 👍",
         image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-        rating: 5
+        rating: 5,
+        ownerReply: "JazakAllah well, thank you very much for your lovely compliments."
     },
     {
         id: 2,
@@ -18,7 +19,8 @@ const testimonials = [
         service: "Client",
         text: "Best experience raha mera glam beauty studio mein since yeh 1 month ka free course tha but mujhe yaha bhut kuch sikhaya gya bhut kuch meine sikha mein yaha pe apna paid course bhi karogi jisme advance technique sikhao jaigi or yaha ka environment bhut jada friendly hai or teaching style bhut amazing hai hath pakad ke sikhaya jata hai mein sab ko yaha aana suggest karogi",
         image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-        rating: 5
+        rating: 5,
+        ownerReply: "I am very grateful for your review. I am also very happy that you taught everyone."
     },
     {
         id: 3,
@@ -26,7 +28,8 @@ const testimonials = [
         service: "Client",
         text: "loved my visit to Glam Beauty Studio!Fiza is such a sweetheart – her polite and caring attitude made my visit so special. Amazing service.",
         image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-        rating: 5
+        rating: 5,
+        ownerReply: "Thnku so much ma'am"
     },
     {
         id: 4,
@@ -34,7 +37,8 @@ const testimonials = [
         service: "Client",
         text: "Experienced, expert, professional, friendly, caring, diligent. Awesome hair do, fantastic facial effects, beautiful service, excellent results. Thanku for the best service 👍",
         image: "https://images.unsplash.com/photo-1531123897727-8f129e1bf98c?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-        rating: 5
+        rating: 5,
+        ownerReply: "<truncated 10576 bytes>"
     },
     {
         id: 5,
@@ -298,7 +302,8 @@ const testimonials = [
         service: "Client",
         text: "Highly recommended! Excellent service at Glam Beauty Studio.",
         image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-        rating: 5
+        rating: 5,
+        ownerReply: "Thnku dear 🙏🏻"
     },
     {
         id: 38,
@@ -306,7 +311,8 @@ const testimonials = [
         service: "Client",
         text: "Highly recommended! Excellent service at Glam Beauty Studio.",
         image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-        rating: 5
+        rating: 5,
+        ownerReply: "Thanku so much dear"
     },
     {
         id: 39,
@@ -314,7 +320,8 @@ const testimonials = [
         service: "Client",
         text: "Highly recommended! Excellent service at Glam Beauty Studio.",
         image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-        rating: 5
+        rating: 5,
+        ownerReply: "Thanku so much for your kind words, Md Danish ji! 😊 We're thrilled to know that you had a great experience at our Beauty Parlour. 👍✨ Your satisfaction is our priority, and we look forward to serving you again soon. Warm Regards, Team Glam Beauty Studio."
     },
     {
         id: 40,
@@ -322,7 +329,8 @@ const testimonials = [
         service: "Client",
         text: "Highly recommended! Excellent service at Glam Beauty Studio.",
         image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-        rating: 5
+        rating: 5,
+        ownerReply: "Thanku so much Rani Kumari ji! We are thrilled to hear that you had a 5-star experience at Glam Beauty Studio. 😊🌟 We appreciate your kind words and recommendation. Looking forward to pamper you again soon! Warm Regards, Team Glam Beauty Studio."
     },
     {
         id: 41,
@@ -330,7 +338,8 @@ const testimonials = [
         service: "Client",
         text: "Highly recommended! Excellent service at Glam Beauty Studio.",
         image: "https://images.unsplash.com/photo-1531123897727-8f129e1bf98c?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-        rating: 5
+        rating: 5,
+        ownerReply: "Thanku azmi md imtiyaz khan! We're thrilled to hear that you had a great experience at our beauty parlour. 😊🌟 We will continue to provide the highest quality services and ensure your satisfaction. Warm Regards, Team Glam Beauty Studio."
     },
     {
         id: 42,
@@ -338,7 +347,8 @@ const testimonials = [
         service: "Client",
         text: "Highly recommended! Excellent service at Glam Beauty Studio.",
         image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-        rating: 5
+        rating: 5,
+        ownerReply: "Thanku Nagma Khan 😊 We're thrilled to hear that you had a positive experience at our Beauty Parlour! 🌟 It's our top priority to provide exceptional service and make our clients feel pampered. Your feedback means the world to us! If there's anything else we can do for you, please let us know. Warm Regards, Team Glam Beauty Studio."
     },
     {
         id: 43,
@@ -346,7 +356,8 @@ const testimonials = [
         service: "Client",
         text: "Highly recommended! Excellent service at Glam Beauty Studio.",
         image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
-        rating: 5
+        rating: 5,
+        ownerReply: "Dear Adeeba Moin ji, Thanku so much for your 5⭐ review! We're thrilled to hear that you had a wonderful experience at Glam Beauty Studio 💖 Keep shining and we can't wait to see you again! Warm Regards, Team Glam Beauty Studio."
     }
 ];
 
@@ -501,9 +512,14 @@ export const TestimonialCarousel = () => {
                                         </div>
 
                                         {/* Testimonial Text */}
-                                        <p className="text-[#8B5E3C] leading-relaxed italic">
-                                            "{testimonial.text}"
-                                        </p>
+                                        $1
+                                        {testimonial.ownerReply && (
+                                            <div className="mt-6 p-4 bg-[#F5E6D3] rounded-xl border border-[#E8CBAF] relative">
+                                                <div className="absolute -top-2 left-6 w-4 h-4 bg-[#F5E6D3] border-l border-t border-[#E8CBAF] transform rotate-45"></div>
+                                                <p className="text-sm font-bold text-[#2B1D17] mb-1">Glam Beauty Studio (Owner)</p>
+                                                <p className="text-sm text-[#8B5E3C] leading-relaxed">{testimonial.ownerReply}</p>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             ))}
@@ -519,19 +535,9 @@ export const TestimonialCarousel = () => {
                                 <ChevronLeft className="w-6 h-6" />
                             </button>
 
-                            {/* Dots Indicator */}
-                            <div className="flex gap-2">
-                                {testimonials.map((_, idx) => (
-                                    <button
-                                        key={idx}
-                                        onClick={() => goToSlide(idx)}
-                                        className={`transition-all duration-300 rounded-full ${
-                                            idx === currentIndex
-                                                ? "w-8 h-3 bg-[#C99A6B]"
-                                                : "w-3 h-3 bg-[#C99A6B]/40 hover:bg-[#C99A6B]/60"
-                                        }`}
-                                    />
-                                ))}
+                            {/* Number Indicator */}
+                            <div className="flex items-center justify-center font-semibold text-[#8B5E3C] bg-[#FAF7F4] px-6 py-2 rounded-full shadow-sm border border-[#E8CBAF]">
+                                {currentIndex + 1} / {testimonials.length}
                             </div>
 
                             {/* Next Button */}
