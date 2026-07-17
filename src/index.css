@@ -18,7 +18,7 @@
   --color-muted-foreground: rgb(120, 107, 99);
   --color-border: rgb(234, 221, 211);
 
-  --animate-marquee: marquee 12s linear infinite;
+  --animate-marquee: marquee 20s linear infinite;
 
   @keyframes marquee {
     0% { transform: translateX(0%); }
