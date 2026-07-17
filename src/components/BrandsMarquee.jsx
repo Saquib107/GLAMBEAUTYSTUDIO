@@ -38,7 +38,7 @@ export const BrandsMarquee = () => {
                   This makes the 50% translation align perfectly with the start of the second half,
                   resulting in a seamless loop.
                 */}
-                <div className="animate-marquee w-max flex items-center gap-16 pr-16 group-hover:[animation-play-state:paused]">
+                <div className="animate-marquee w-max flex items-center gap-16 pr-16">
                     {duplicatedBrands.map((brand, idx) => (
                         <div 
                             key={idx} 
