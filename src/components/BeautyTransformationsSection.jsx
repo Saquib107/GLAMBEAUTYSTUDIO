@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import hairTransformationImg from "../assets/hair-transformation-new.jpeg";
 
 const transformations = [
     {
@@ -16,9 +15,8 @@ const transformations = [
         id: 2,
         title: "Hair Transformation",
         service: "Hair Styling",
-        before: hairTransformationImg,
-        after: hairTransformationImg,
-        isStatic: true,
+        before: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=500&fit=crop",
+        after: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop",
     },
     {
         id: 3,
@@ -140,74 +138,63 @@ export const BeautyTransformationsSection = () => {
                             >
                                 <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-80">
                                     {/* Before/After Slider */}
-                                    {item.isStatic ? (
-                                        <div className="w-full h-full relative">
-                                            <img
-                                                src={item.after}
-                                                alt="Transformation"
-                                                loading="lazy"
-                                                className="w-full h-full object-cover"
-                                            />
-                                        </div>
-                                    ) : (
+                                    <div
+                                        className="w-full h-full relative"
+                                        onMouseMove={(e) => handleSlider(item.id, e)}
+                                        onTouchMove={(e) => {
+                                            const rect = e.currentTarget.getBoundingClientRect();
+                                            const position =
+                                                ((e.touches[0].clientX - rect.left) / rect.width) * 100;
+                                            setSliderPositions((prev) => ({
+                                                ...prev,
+                                                [item.id]: Math.max(0, Math.min(100, position)),
+                                            }));
+                                        }}
+                                    >
+                                        {/* After Image (Background) */}
+                                        <img
+                                            src={item.after}
+                                            alt="After"
+                                            loading="lazy"
+                                            className="w-full h-full object-cover"
+                                        />
+
+                                        {/* Before Image (Overlay) */}
                                         <div
-                                            className="w-full h-full relative"
-                                            onMouseMove={(e) => handleSlider(item.id, e)}
-                                            onTouchMove={(e) => {
-                                                const rect = e.currentTarget.getBoundingClientRect();
-                                                const position =
-                                                    ((e.touches[0].clientX - rect.left) / rect.width) * 100;
-                                                setSliderPositions((prev) => ({
-                                                    ...prev,
-                                                    [item.id]: Math.max(0, Math.min(100, position)),
-                                                }));
+                                            className="absolute inset-0 overflow-hidden"
+                                            style={{
+                                                width: `${sliderPositions[item.id] || 50}%`,
                                             }}
                                         >
-                                            {/* After Image (Background) */}
                                             <img
-                                                src={item.after}
-                                                alt="After"
+                                                src={item.before}
+                                                alt="Before"
                                                 loading="lazy"
                                                 className="w-full h-full object-cover"
                                             />
+                                        </div>
 
-                                            {/* Before Image (Overlay) */}
-                                            <div
-                                                className="absolute inset-0 overflow-hidden"
-                                                style={{
-                                                    width: `${sliderPositions[item.id] || 50}%`,
-                                                }}
-                                            >
-                                                <img
-                                                    src={item.before}
-                                                    alt="Before"
-                                                    loading="lazy"
-                                                    className="w-full h-full object-cover"
-                                                />
-                                            </div>
-
-                                            {/* Slider Handle */}
-                                            <div
-                                                className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize"
-                                                style={{
-                                                    left: `${sliderPositions[item.id] || 50}%`,
-                                                }}
-                                            >
-                                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg">
-                                                    <ChevronLeft className="w-4 h-4 text-[#C99A6B] absolute left-1" />
-                                                    <ChevronRight className="w-4 h-4 text-[#C99A6B] absolute right-1" />
-                                                </div>
-                                            </div>
-
-                                            {/* Labels */}
-                                            <div className="absolute top-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm">
-                                                Before
-                                            </div>
-                                            <div className="absolute top-4 right-4 bg-[#C99A6B]/80 text-white px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm">
-                                                After
+                                        {/* Slider Handle */}
+                                        <div
+                                            className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize"
+                                            style={{
+                                                left: `${sliderPositions[item.id] || 50}%`,
+                                            }}
+                                        >
+                                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg">
+                                                <ChevronLeft className="w-4 h-4 text-[#C99A6B] absolute left-1" />
+                                                <ChevronRight className="w-4 h-4 text-[#C99A6B] absolute right-1" />
                                             </div>
                                         </div>
-                                    )}
+
+                                        {/* Labels */}
+                                        <div className="absolute top-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm">
+                                            Before
+                                        </div>
+                                        <div className="absolute top-4 right-4 bg-[#C99A6B]/80 text-white px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm">
+                                            After
+                                        </div>
+                                    </div>
 
                                     {/* Overlay on Hover */}
                                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
