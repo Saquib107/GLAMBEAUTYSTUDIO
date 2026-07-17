@@ -27,10 +27,10 @@ const transformations = [
     },
     {
         id: 4,
-        title: "Facial Treatment Results",
-        service: "Facial Treatments",
-        before: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop",
-        after: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=500&fit=crop",
+        title: "Hair Color Transformation",
+        service: "Hair Color",
+        before: "/images/hair_color_before.jpg",
+        after: "/images/hair_color_after.jpg",
     },
     {
         id: 5,
