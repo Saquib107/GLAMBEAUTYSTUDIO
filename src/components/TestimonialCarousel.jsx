@@ -6,36 +6,348 @@ import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 const testimonials = [
     {
         id: 1,
-        name: "Priya Sharma",
-        service: "Bridal Makeup",
-        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
-        rating: 5,
-        text: "Absolutely magical! The bridal makeup was flawless and lasted throughout my entire wedding. Zeba's attention to detail and professionalism made me feel so confident on my special day.",
+        name: "Sahel Ali",
+        service: "Client",
+        text: "Loved the service at [ Glam Beauty Parlor ]! 😊 The staff were super friendly and professional. My hair felt amazing post-cut and color - exactly what I wanted! 💇‍♀️ Highly recommend trying them out! 👍",
+        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
     },
     {
         id: 2,
-        name: "Anjali Patel",
-        service: "Hair Spa Treatment",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
-        rating: 5,
-        text: "My hair has never looked and felt better! The hair spa treatment was incredibly rejuvenating. The team really knows their craft and uses premium products that actually work.",
+        name: "Zoya Khan",
+        service: "Client",
+        text: "Best experience raha mera glam beauty studio mein since yeh 1 month ka free course tha but mujhe yaha bhut kuch sikhaya gya bhut kuch meine sikha mein yaha pe apna paid course bhi karogi jisme advance technique sikhao jaigi or yaha ka environment bhut jada friendly hai or teaching style bhut amazing hai hath pakad ke sikhaya jata hai mein sab ko yaha aana suggest karogi",
+        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
     },
     {
         id: 3,
-        name: "Kavya Deshmukh",
-        service: "Party Makeup",
-        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop",
-        rating: 5,
-        text: "I had a last-minute event and Glam Beauty Studio fit me in perfectly. The makeup was stunning and lasted all evening. Professional, friendly, and worth every penny!",
+        name: "Taliya Eram",
+        service: "Client",
+        text: "loved my visit to Glam Beauty Studio!Fiza is such a sweetheart – her polite and caring attitude made my visit so special. Amazing service.",
+        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
     },
     {
         id: 4,
-        name: "Sneha Gupta",
-        service: "Facial Treatment",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop",
-        rating: 5,
-        text: "Best facial I've ever had. The team really listens to your concerns and customizes the treatment accordingly. My skin feels rejuvenated and glowing!",
+        name: "Tamanna Perween",
+        service: "Client",
+        text: "Experienced, expert, professional, friendly, caring, diligent. Awesome hair do, fantastic facial effects, beautiful service, excellent results. Thanku for the best service 👍",
+        image: "https://images.unsplash.com/photo-1531123897727-8f129e1bf98c?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
     },
+    {
+        id: 5,
+        name: "Meenu Csp",
+        service: "Client",
+        text: "Service is very good ......I got a hair spa and facial done, and the results were great. Plus, their behavior is very nice.",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 6,
+        name: "Sanober Khan",
+        service: "Client",
+        text: "I'm student of glam beauty studio.... Best experience, ma'am was very kind hearted, I'm so glad to be part of this batch....❤️❤️❤️❤️",
+        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 7,
+        name: "Kaneez Fatima",
+        service: "Client",
+        text: "Maine yaha 1 month course Kiya hai free of course or mujhe yaha bahut kuch sikhne ko mila hai yaha mam bhi bahut hi acchi hai yaha ki mera yaha pe bahut hi accha experience rha mujhe yaha aake bahut kuch sikhne ko mila",
+        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 8,
+        name: "Sadaf Tanweer",
+        service: "Client",
+        text: "Very nice service.Genuine price I would recommend every one to visit once and take the service.Staffs are very co operative and friendly.",
+        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 9,
+        name: "Bushra Tasneem",
+        service: "Client",
+        text: "I had an absolutely wonderful experience visiting here . I would definitely recommend Glam Beauty Studio to anyone looking for excellent beauty services.",
+        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 10,
+        name: "MD SHAFIQUE",
+        service: "Client",
+        text: "I am the student of glam beauty studio.As my experience I was tought everything clearly every makeup look and and hairstyle etc.I am happy with glam beauty studio 💖",
+        image: "https://images.unsplash.com/photo-1531123897727-8f129e1bf98c?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 11,
+        name: "Richa",
+        service: "Client",
+        text: "Best Services at reasonable prices. Owner's behaviour is too friendly.. Please visit. 🙂↕️",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 12,
+        name: "Rahmat Jahan",
+        service: "Client",
+        text: "Great service received at the parlour. Staff was very friendly and polite and I enjoyed the service and vibe",
+        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 13,
+        name: "Khushboo Kumari",
+        service: "Client",
+        text: "I really liked your behavior and your work, it is a very good parlor, you can go there.",
+        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 14,
+        name: "Neelam Aftab",
+        service: "Client",
+        text: "Wonderful salon. Elegant service is provided by experience, staff and beautician, and one more thing which I’d like the most is guidance to your skin is given at no extra cost and skin treatment is according to the type of your skin. I liked the place",
+        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 15,
+        name: "Rashda Tarannum Tarannum",
+        service: "Client",
+        text: "Amazing parlour service is very good 👍 and behavior is also decoram and politeness",
+        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 16,
+        name: "Momina Moin",
+        service: "Client",
+        text: "I liked their service very much and the price is very affordable as well, I would like to come again and again.,♥️",
+        image: "https://images.unsplash.com/photo-1531123897727-8f129e1bf98c?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 17,
+        name: "Labanya Shil",
+        service: "Client",
+        text: "Today I visited glam beauty studio.. I like there behaviour😍 very much and I got very good service 😊at a very reasonable price .. thankyou so much zeba ji & fiza❤️❤️❤️❤️",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 18,
+        name: "Zainab Perween",
+        service: "Client",
+        text: "I'm so impressed with the results! The [specific service, e.g., hair straighting was excellent I am very happy..",
+        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 19,
+        name: "firoz imam",
+        service: "Client",
+        text: "Very nice ,I like your work.very very thanx. Glam beauty studio is best in jamshedpur.",
+        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 20,
+        name: "Azharuddin khan",
+        service: "Client",
+        text: "Good behaviour and smart makeup artist Unexpected bridal makeup",
+        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 21,
+        name: "Puchku Shil",
+        service: "Client",
+        text: "Very good service.nise make-up.🥰my feelings is very good 👍",
+        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 22,
+        name: "Farhat Rehan Ahmad",
+        service: "Client",
+        text: "My wife visit this place and she was happy and satisfied with the amazing staffs and their hospitality.",
+        image: "https://images.unsplash.com/photo-1531123897727-8f129e1bf98c?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 23,
+        name: "Zoya Ahamad",
+        service: "Client",
+        text: "Great experience, Fabulous service , Always great to come here !",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 24,
+        name: "Chanchal",
+        service: "Client",
+        text: "Great experience... Excellent service 👍 must visit.",
+        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 25,
+        name: "Bablimardi Bablimardi",
+        service: "Client",
+        text: "Wow very nice I like it",
+        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 26,
+        name: "Shaheen Parween",
+        service: "Client",
+        text: "Very good service💕",
+        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 27,
+        name: "Nikhat Perween",
+        service: "Client",
+        text: "Amazing services.",
+        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 28,
+        name: "Tilism Bano",
+        service: "Client",
+        text: "Service is owsm, satisfied",
+        image: "https://images.unsplash.com/photo-1531123897727-8f129e1bf98c?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 29,
+        name: "Rupsha Dey",
+        service: "Client",
+        text: "Good service",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 30,
+        name: "Wafa Khan",
+        service: "Client",
+        text: "Very good services very satisfied.lov it",
+        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 31,
+        name: "Humdo Sana",
+        service: "Client",
+        text: "Amazing service, clean environment, and great results. Highly recommended",
+        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 32,
+        name: "Sonam Perveen",
+        service: "Client",
+        text: "Highly recommended! Excellent service at Glam Beauty Studio.",
+        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 33,
+        name: "Syed Zafar",
+        service: "Client",
+        text: "Highly recommended! Excellent service at Glam Beauty Studio.",
+        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 34,
+        name: "Noor Saba",
+        service: "Client",
+        text: "Highly recommended! Excellent service at Glam Beauty Studio.",
+        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 35,
+        name: "Rafique Ahmed",
+        service: "Client",
+        text: "Highly recommended! Excellent service at Glam Beauty Studio.",
+        image: "https://images.unsplash.com/photo-1531123897727-8f129e1bf98c?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 36,
+        name: "Saiqua Naaz",
+        service: "Client",
+        text: "Highly recommended! Excellent service at Glam Beauty Studio.",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 37,
+        name: "Priyanshi Singh",
+        service: "Client",
+        text: "Highly recommended! Excellent service at Glam Beauty Studio.",
+        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 38,
+        name: "Simranjeet Kaur",
+        service: "Client",
+        text: "Highly recommended! Excellent service at Glam Beauty Studio.",
+        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 39,
+        name: "Md Danish",
+        service: "Client",
+        text: "Highly recommended! Excellent service at Glam Beauty Studio.",
+        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 40,
+        name: "Rani Kumari",
+        service: "Client",
+        text: "Highly recommended! Excellent service at Glam Beauty Studio.",
+        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 41,
+        name: "azmi md imtiyaz khan",
+        service: "Client",
+        text: "Highly recommended! Excellent service at Glam Beauty Studio.",
+        image: "https://images.unsplash.com/photo-1531123897727-8f129e1bf98c?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 42,
+        name: "Nagma Khan",
+        service: "Client",
+        text: "Highly recommended! Excellent service at Glam Beauty Studio.",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    },
+    {
+        id: 43,
+        name: "Adeeba Moin",
+        service: "Client",
+        text: "Highly recommended! Excellent service at Glam Beauty Studio.",
+        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    }
 ];
 
 export const TestimonialCarousel = () => {
