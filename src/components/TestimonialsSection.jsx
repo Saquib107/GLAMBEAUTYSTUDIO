@@ -4,17 +4,17 @@ import { Card, CardContent } from "@/components/ui/card";
 const testimonials = [
     {
         id: 1,
-        name: "Priya Sharma",
-        role: "Bride-to-be",
-        review: "Zeba and her team at the Agrico studio are simply magical! They made me feel like a queen on my wedding day. The bridal makeup was flawless, and the entire staff was so professional and accommodating. Best in Jamshedpur!",
+        name: "Sahel Ali",
+        role: "Client",
+        review: "\"Loved the service at [ Glam Beauty Parlor ]! 😍 The staff were super friendly and professional. My hair felt amazing post-cut and color - exactly what I wanted! 💆‍♀️ Highly recommend trying them out! 👍\"",
         image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
         rating: 5
     },
     {
         id: 2,
-        name: "Anjali Gupta",
-        role: "Regular Client",
-        review: "I've been visiting Glam Beauty Studio for months now. The hair spa treatment is amazing and completely rejuvenated my damaged hair. It's definitely the top beauty parlor in Jamshedpur with premium service.",
+        name: "Zoya Khan",
+        role: "Student / Local Guide",
+        review: "Best experience raha mera glam beauty studio mein since yeh 1 month ka free course tha but mujhe yaha bhut kuch sikhaya gya bhut kuch meine sikha mein yaha pe apna paid course bhi karogi jisme advance technique sikhao jaigi or yaha ka environment bhut jada friendly hai or teaching style bhut amazing hai hath pakad ke sikhaya jata hai mein sab ko yaha aana suggest karogi",
         image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
         rating: 5
     },
