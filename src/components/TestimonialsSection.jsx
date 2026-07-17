@@ -3,33 +3,37 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const testimonials = [
     {
+        id: 1,
         name: "Priya Sharma",
-        service: "Bridal Makeup",
-        review: "Zeba and her team made me feel like a queen on my wedding day. The makeup was flawless and lasted through the entire reception. Highly recommended!",
-        rating: 5,
-        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
+        role: "Bride-to-be",
+        review: "Zeba and her team at the Agrico studio are simply magical! They made me feel like a queen on my wedding day. The bridal makeup was flawless, and the entire staff was so professional and accommodating. Best in Jamshedpur!",
+        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
     },
     {
-        name: "Anjali Patel",
-        service: "Hair Spa & Treatment",
-        review: "My hair has never looked better! The hair spa treatment completely rejuvenated my damaged hair. Professional service and amazing results.",
-        rating: 5,
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
+        id: 2,
+        name: "Anjali Gupta",
+        role: "Regular Client",
+        review: "I've been visiting Glam Beauty Studio for months now. The hair spa treatment is amazing and completely rejuvenated my damaged hair. It's definitely the top beauty parlor in Jamshedpur with premium service.",
+        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
     },
     {
-        name: "Kavya Deshmukh",
-        service: "Party Makeup",
-        review: "Had a last-minute event and Glam Beauty Studio accommodated me perfectly. The makeup was stunning and the staff was super friendly!",
-        rating: 5,
-        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop",
+        id: 3,
+        name: "Sneha Singh",
+        role: "Event Guest",
+        review: "Had a last-minute family event and Glam Beauty Studio accommodated me perfectly. The party makeup was stunning and lasted all night. Highly recommend this place near the Mosque in Agrico!",
+        image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
     },
     {
-        name: "Sneha Gupta",
-        service: "Facial & Skincare",
-        review: "Best facial I've ever had. The products are premium quality and the team really cares about your skin health. Worth every penny!",
-        rating: 5,
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop",
-    },
+        id: 4,
+        name: "Neha Patel",
+        role: "Skincare Enthusiast",
+        review: "Best facial I've ever had in Jamshedpur. The products they use are premium quality and the team really cares about your skin health. The 4.9 rating they have online is truly well-deserved!",
+        image: "https://images.unsplash.com/photo-1531123897727-8f129e1bf98c?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80",
+        rating: 5
+    }
 ];
 
 export const TestimonialsSection = () => {
