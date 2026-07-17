@@ -17,6 +17,13 @@
   --color-primary-foreground: rgb(255, 255, 255);
   --color-muted-foreground: rgb(120, 107, 99);
   --color-border: rgb(234, 221, 211);
+
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
 }
 
 /* Map your custom utility class names to real values */
