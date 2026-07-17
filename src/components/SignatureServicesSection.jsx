@@ -25,84 +25,12 @@ const services = [
     },
     {
         id: 3,
-        name: "Hair Spa",
-        description: "Rejuvenating hair spa treatments to restore shine and health.",
-        price: "₹600",
-        icon: Droplets,
-        slug: "hair-treatments"
-    },
-    {
-        id: 4,
         name: "Facial Treatments",
         description: "Customized facials using premium products for radiant skin.",
         price: "₹1,200",
         icon: SparklesIcon,
         slug: "facials-skincare"
-    },
-    {
-        id: 5,
-        name: "Party Makeup",
-        description: "Glamorous makeup looks for parties and special events.",
-        price: "₹2,500",
-        icon: Wand2,
-        slug: "party-makeup"
-    },
-    {
-        id: 6,
-        name: "Skin Care",
-        description: "Professional skincare treatments tailored to your skin type.",
-        price: "₹600",
-        icon: Leaf,
-        slug: "facials-skincare"
-    },
-    {
-        id: 7,
-        name: "Nail Extensions",
-        description: "Premium gel and acrylic nail extensions with custom nail art designs.",
-        price: "₹1,500",
-        icon: Palette,
-        slug: "nail-services"
-    },
-    {
-        id: 8,
-        name: "Eyelash Extensions",
-        description: "Enhance your eyes with our natural or volume lash extensions.",
-        price: "₹2,000",
-        icon: SparklesIcon,
-        slug: "eyelash-extensions"
-    },
-    {
-        id: 9,
-        name: "Full Body Spa",
-        description: "Relaxing full body spa and massage using essential oils.",
-        price: "₹3,500",
-        icon: Leaf,
-        slug: "full-body-spa"
-    },
-    {
-        id: 10,
-        name: "Eyebrow Threading",
-        description: "Precise eyebrow shaping and threading for a clean look.",
-        price: "₹100",
-        icon: Scissors,
-        slug: "eyebrow-threading"
-    },
-    {
-        id: 11,
-        name: "Airbrush Makeup",
-        description: "Flawless and lightweight airbrush makeup for a perfect finish.",
-        price: "₹4,500",
-        icon: Wand2,
-        slug: "bridal-makeup"
-    },
-    {
-        id: 12,
-        name: "Manicure & Pedicure",
-        description: "Luxury hand and foot care spa with premium polish application.",
-        price: "₹800",
-        icon: Droplets,
-        slug: "nail-services"
-    },
+    }
 ];
 
 
