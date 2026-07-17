@@ -20,17 +20,17 @@ const pricingData = [
     {
         category: "Bridal & Event Glam",
         services: [
-            { name: "Bridal Makeup (Full Package)", price: "Starting From ₹8,000" },
+            { name: "Bridal Makeup (Full Package)", price: "Starting From ₹10,000" },
             { name: "Engagement Makeup", price: "Starting From ₹5,000" },
             { name: "Party / Cocktail Makeup", price: "Starting From ₹2,500" },
-            { name: "Occasion Hair Styling", price: "Starting From ₹500" },
+            { name: "Occasion Hair Styling", price: "Starting From ₹700" },
             { name: "Mahendi", price: "Starting From ₹300" },
         ],
     },
     {
         category: "Hair Styling & Treatments",
         services: [
-            { name: "Hair Spa", price: "Starting From ₹600" },
+            { name: "Hair Spa", price: "Starting From ₹700" },
             { name: "Straightening / Smoothening", price: "Starting From ₹3,000" },
             { name: "Hair Treatment", price: "Starting From ₹4,000" },
             { name: "Haircut", price: "Starting From ₹300" },
@@ -40,14 +40,14 @@ const pricingData = [
         category: "Essential Maintenance",
         services: [
             { name: "Eyebrow Threading", price: "₹40" },
-            { name: "Upper Lip / Chin Threading", price: "₹30" },
+            { name: "Upper Lip / Chin Threading", price: "₹30 Each" },
             { name: "Full Face Waxing", price: "₹300" },
         ],
     },
     {
         category: "Skincare & Facials",
         services: [
-            { name: "Basic Clean-Up", price: "₹600" },
+            { name: "Basic Clean-Up", price: "₹500" },
             { name: "Signature Luxury Facial", price: "₹1,200" },
             { name: "Hydrating Gold Facial", price: "₹2,000" },
         ],
@@ -57,7 +57,7 @@ const pricingData = [
         services: [
             { name: "Classic Manicure", price: "₹400" },
             { name: "Spa Pedicure", price: "₹600" },
-            { name: "Hand / Leg Waxing", price: "₹800" },
+            { name: "Hand / Leg Waxing", price: "₹1000" },
         ],
     },
 ];
