@@ -22,8 +22,8 @@ const transformations = [
         id: 3,
         title: "Party Makeup Glam",
         service: "Party Makeup",
-        before: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=500&fit=crop",
-        after: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&h=500&fit=crop",
+        before: "/images/party_before.jpg",
+        after: "/images/party_after.jpg",
     },
     {
         id: 4,
