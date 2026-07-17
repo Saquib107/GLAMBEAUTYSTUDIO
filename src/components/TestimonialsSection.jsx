@@ -69,7 +69,7 @@ export const TestimonialsSection = () => {
                                                 {testimonial.name}
                                             </h3>
                                             <p className="text-sm text-muted-foreground">
-                                                {testimonial.service}
+                                                {testimonial.role}
                                             </p>
                                             <div className="flex gap-1 mt-2">
                                                 {[...Array(testimonial.rating)].map((_, i) => (
