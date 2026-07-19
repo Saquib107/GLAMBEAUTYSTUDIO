@@ -350,6 +350,8 @@ const testimonials = [
     }
 ];
 
+const displayTestimonials = testimonials.slice(0, 9);
+
 export const TestimonialCarousel = () => {
     const containerRef = useRef(null);
     const [currentIndex, setCurrentIndex] = useState(0);

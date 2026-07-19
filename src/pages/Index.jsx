@@ -1,7 +1,5 @@
 import { PricingSection } from "@/components/PricingSection";
 import { BrandsMarquee } from "@/components/BrandsMarquee";
-import { FAQSection } from "@/components/FAQSection";
-import { BusinessFeaturesSection } from "@/components/BusinessFeaturesSection";
 import { GallerySection } from "@/components/GallerySection";
 import { MobileStickyBar } from "@/components/MobileStickyBar";
 import { Navigation } from "@/components/Navigation";
@@ -46,9 +44,6 @@ const Index = () => {
                 <GallerySection />
             </div>
 
-            {/* Business Features Section */}
-            <BusinessFeaturesSection />
-
             {/* Why Choose Us Section */}
             <div id="why-us">
                 <WhyChooseUsSection />
@@ -66,9 +61,6 @@ const Index = () => {
             <div id="testimonials">
                 <TestimonialCarousel />
             </div>
-
-            {/* FAQ Section */}
-            <FAQSection />
 
             {/* Booking Section */}
             <div id="booking">
