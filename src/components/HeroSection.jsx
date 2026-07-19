@@ -1,81 +1,82 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.jpg";
-import { Star, Sparkles, Check, Phone, Clock } from "lucide-react";
+import { Star, Sparkles, Calendar, Phone, Scissors, CheckCircle } from "lucide-react";
 
 export const HeroSection = () => {
     const containerRef = useRef(null);
+    const bgRef = useRef(null);
     const leftRef = useRef(null);
     const rightRef = useRef(null);
-    const reviewCardRef = useRef(null);
+    
+    // Booking Form State
+    const [formData, setFormData] = useState({
+        service: "",
+        date: "",
+        phone: ""
+    });
+
+    const handleBooking = (e) => {
+        e.preventDefault();
+        const phoneNumber = "918294040050";
+        const message = `Hi Glam Beauty Studio! I'd like to book a quick appointment.\n\nService: ${formData.service || 'Not specified'}\nDate: ${formData.date || 'Not specified'}\nPhone: ${formData.phone || 'Not specified'}`;
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, "_blank");
+    };
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            // Fade in left section content
-            gsap.from([".hero-badge", ".hero-headline", ".hero-subheadline", ".hero-stats", ".hero-buttons"], {
-                opacity: 0,
-                y: 20,
-                stagger: 0.15,
-                duration: 1,
-                ease: "power3.out",
-            });
+            // Background Ken Burns zoom
+            gsap.fromTo(bgRef.current, 
+                { scale: 1 }, 
+                { scale: 1.1, duration: 20, ease: "none", repeat: -1, yoyo: true }
+            );
 
-            // Fade and scale in right section image
-            gsap.from(".hero-image", {
+            // Fade in left section content sequentially
+            gsap.from(".hero-anim", {
                 opacity: 0,
-                scale: 0.9,
+                y: 30,
+                stagger: 0.15,
                 duration: 1.2,
                 ease: "power3.out",
-                delay: 0.3,
+                delay: 0.2
             });
 
-            // Floating animation for review card
-            gsap.to(".review-card", {
+            // Trust indicators fade in
+            gsap.from(".trust-anim", {
+                opacity: 0,
+                y: 20,
+                stagger: 0.1,
+                duration: 1,
+                ease: "power2.out",
+                delay: 1.2
+            });
+
+            // Booking card entrance
+            gsap.from(rightRef.current, {
+                opacity: 0,
+                x: 40,
+                duration: 1.2,
+                ease: "power3.out",
+                delay: 0.8
+            });
+
+            // Continuous floating animation for booking card
+            gsap.to(rightRef.current, {
                 y: -15,
-                duration: 3,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut",
-            });
-
-            // Floating badges animation
-            gsap.to(".floating-badge-1", {
-                y: -20,
                 duration: 4,
                 repeat: -1,
                 yoyo: true,
                 ease: "sine.inOut",
+                delay: 2
             });
 
-            gsap.to(".floating-badge-2", {
-                y: -25,
-                duration: 4.5,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut",
-                delay: 0.5,
-            });
-
-            gsap.to(".floating-badge-3", {
-                y: -18,
-                duration: 4.2,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut",
-                delay: 0.25,
-            });
-
-            // Button hover effects
-            const buttons = document.querySelectorAll(".hero-button");
-            buttons.forEach((btn) => {
-                btn.addEventListener("mouseenter", () => {
-                    gsap.to(btn, { scale: 1.05, duration: 0.3, overwrite: "auto" });
-                });
-                btn.addEventListener("mouseleave", () => {
-                    gsap.to(btn, { scale: 1, duration: 0.3, overwrite: "auto" });
-                });
-            });
+            // Floating sparkles
+            gsap.to(".sparkle-1", { y: -20, rotation: 15, duration: 3, repeat: -1, yoyo: true, ease: "sine.inOut" });
+            gsap.to(".sparkle-2", { y: -15, rotation: -15, duration: 4, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 1 });
+            gsap.to(".sparkle-3", { y: -25, rotation: 20, duration: 3.5, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 0.5 });
+            
         }, containerRef);
 
         return () => ctx.revert();
@@ -88,60 +89,53 @@ export const HeroSection = () => {
     return (
         <section
             ref={containerRef}
-            className="relative min-h-screen overflow-hidden pt-16 lg:pt-20 pb-12 flex items-center"
+            className="relative min-h-screen overflow-hidden flex items-center pt-24 pb-12 lg:pt-0 lg:pb-0 font-sans"
             id="hero"
         >
-            {/* Background Gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#faf7f4] via-[#f5f0ea] to-[#ece7df] -z-10" />
+            {/* Background Image with Ken Burns Target */}
+            <div className="absolute inset-0 z-0 overflow-hidden bg-[#1A1A1A]">
+                <img
+                    ref={bgRef}
+                    src={heroImage}
+                    alt="Luxury Salon Background"
+                    className="w-full h-full object-cover opacity-60"
+                />
+                {/* Gradient Overlay for Readability */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#1A1A1A] via-[#1A1A1A]/80 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-[#1A1A1A]/50" />
+            </div>
 
-            {/* Decorative Background Elements */}
-            <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#C99A6B]/10 rounded-full blur-3xl -z-10" />
-            <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-[#8B5E3C]/8 rounded-full blur-3xl -z-10" />
+            {/* Decorative Gold/Rose-Gold Blobs */}
+            <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-[#D4AF37]/10 rounded-full blur-[100px] -z-0 pointer-events-none" />
+            <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-[#B76E79]/10 rounded-full blur-[100px] -z-0 pointer-events-none" />
 
-            <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                    {/* Left Column */}
-                    <div ref={leftRef} className="space-y-8">
-                        {/* Badge */}
-                        <div className="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/40 backdrop-blur-md border border-white/60 w-fit">
-                            <Sparkles className="w-4 h-4 text-[#C99A6B]" />
-                            <span className="text-sm font-medium text-[#2B1D17]">✨ Trusted By 500+ Happy Clients</span>
-                        </div>
+            {/* Sparkles */}
+            <Sparkles className="sparkle-1 absolute top-32 left-[15%] w-6 h-6 text-[#D4AF37] opacity-60 pointer-events-none z-10" />
+            <Sparkles className="sparkle-2 absolute bottom-40 left-[45%] w-8 h-8 text-[#B76E79] opacity-40 pointer-events-none z-10" />
+            <Sparkles className="sparkle-3 absolute top-40 right-[10%] w-5 h-5 text-[#FDF8F4] opacity-50 pointer-events-none z-10" />
 
-                        {/* Main Headline */}
-                        <div className="space-y-4">
-                            <h1 className="hero-headline font-serif text-5xl md:text-6xl font-bold text-[#2B1D17] leading-tight">
-                                Luxury Bridal Makeup & Beauty Services in
-                                <span className="block text-[#C99A6B]">Jamshedpur</span>
+            <div className="container mx-auto px-4 z-10 relative h-full flex flex-col justify-center">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center min-h-[calc(100vh-6rem)]">
+                    
+                    {/* Left Column - Content (Spans 7 columns on Desktop) */}
+                    <div ref={leftRef} className="lg:col-span-7 space-y-8 max-w-2xl mx-auto lg:mx-0 text-center lg:text-left pt-10 lg:pt-0">
+                        <div className="space-y-6">
+                            <h1 className="hero-anim font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-[#FDF8F4] leading-[1.1] tracking-tight">
+                                Luxury Beauty.<br/>
+                                <span className="text-[#D4AF37]">Expert Care.</span><br/>
+                                Timeless Confidence.
                             </h1>
 
-                            {/* Subheadline */}
-                            <p className="hero-subheadline text-lg text-[#8B5E3C] max-w-xl leading-relaxed">
-                                Professional Hair Styling, Bridal Makeup, Skin Care and Beauty Services Tailored To Enhance Your Natural Beauty.
+                            <p className="hero-anim text-lg md:text-xl text-[#FDF8F4]/80 leading-relaxed font-light max-w-xl mx-auto lg:mx-0">
+                                Experience premium bridal makeup, professional hair styling, skincare, and nail artistry tailored to enhance your natural beauty.
                             </p>
                         </div>
 
-                        {/* Trust Indicators */}
-                        <div className="hero-stats grid grid-cols-3 gap-4 py-8 border-y border-[#C99A6B]/20">
-                            <div className="text-center lg:text-left">
-                                <div className="text-2xl font-bold text-[#C99A6B]">4.9/5</div>
-                                <p className="text-sm text-[#8B5E3C]/70">⭐ Rating</p>
-                            </div>
-                            <div className="text-center lg:text-left">
-                                <div className="text-2xl font-bold text-[#C99A6B]">500+</div>
-                                <p className="text-sm text-[#8B5E3C]/70">👩 Happy Clients</p>
-                            </div>
-                            <div className="text-center lg:text-left">
-                                <div className="text-2xl font-bold text-[#C99A6B]">8+</div>
-                                <p className="text-sm text-[#8B5E3C]/70">💄 Years Experience</p>
-                            </div>
-                        </div>
-
                         {/* CTA Buttons */}
-                        <div className="hero-buttons flex flex-col sm:flex-row gap-4 pt-4">
+                        <div className="hero-anim flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
                             <Button
                                 size="lg"
-                                className="hero-button bg-[#C99A6B] hover:bg-[#b8894f] text-white px-8 rounded-full font-semibold text-lg transition-all duration-300"
+                                className="bg-[#D4AF37] hover:bg-[#b59228] text-[#1A1A1A] hover:text-[#1A1A1A] px-10 py-6 rounded-full font-semibold text-lg transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] hover:-translate-y-1"
                                 onClick={() => scrollToSection("booking")}
                             >
                                 Book Appointment
@@ -149,77 +143,121 @@ export const HeroSection = () => {
                             <Button
                                 size="lg"
                                 variant="outline"
-                                className="hero-button border-2 border-[#C99A6B] text-[#C99A6B] hover:bg-[#C99A6B]/5 px-8 rounded-full font-semibold text-lg transition-all duration-300"
+                                className="bg-transparent border-2 border-[#FDF8F4]/30 text-[#FDF8F4] hover:bg-[#FDF8F4]/5 hover:border-[#D4AF37] px-10 py-6 rounded-full font-semibold text-lg transition-all duration-300 hover:-translate-y-1"
                                 onClick={() => scrollToSection("transformations")}
                             >
-                                View Our Work
+                                View Portfolio
                             </Button>
                         </div>
 
-                        {/* Contact & Hours */}
-                        <div className="flex flex-col sm:flex-row gap-6 pt-2 text-sm font-medium text-[#8B5E3C]">
-                            <div className="flex items-center gap-2">
-                                <Phone className="w-5 h-5 text-[#C99A6B]" />
-                                <span>+91 82940 40050</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Clock className="w-5 h-5 text-[#C99A6B]" />
-                                <span>Mon - Sun: 10:00 AM - 8:00 PM</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Right Column */}
-                    <div ref={rightRef} className="relative h-[450px] lg:h-[650px] w-full flex items-center justify-center">
-                        {/* Main Hero Image */}
-                        <div className="hero-image relative w-full h-full max-w-[550px] mx-auto">
-                            <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl">
-                                <img
-                                    src={heroImage}
-                                    alt="Glam Beauty Studio - Premium Beauty Services"
-                                    className="w-full h-full object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#3b2f2f]/40 to-transparent" />
-                            </div>
-                        </div>
-
-                        {/* Review Card - Glassmorphism */}
-                        <div className="review-card absolute bottom-8 left-8 right-8 lg:bottom-20 lg:left-auto lg:right-0 lg:w-80 z-10">
-                            <div className="bg-white/80 backdrop-blur-lg border border-white/60 rounded-2xl p-6 shadow-xl">
-                                <div className="flex gap-1 mb-3">
+                        {/* Trust Indicators */}
+                        <div className="hero-anim pt-10 lg:pt-14 mt-4 border-t border-[#FDF8F4]/10 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-4">
+                            <div className="trust-anim flex flex-col items-center lg:items-start space-y-1">
+                                <div className="flex gap-1">
                                     {[...Array(5)].map((_, i) => (
-                                        <Star key={i} className="w-4 h-4 fill-[#d4a574] text-[#d4a574]" />
+                                        <Star key={i} className="w-4 h-4 fill-[#D4AF37] text-[#D4AF37]" />
                                     ))}
                                 </div>
-                                <p className="text-[#3b2f2f] font-medium mb-3 italic">
-                                    "Absolutely amazing service. The bridal makeup was flawless and lasted through my entire wedding!"
-                                </p>
-                                <p className="text-sm font-semibold text-[#d4a574]">— Priya Sharma</p>
+                                <span className="text-2xl font-bold text-[#FDF8F4]">4.9</span>
+                                <span className="text-xs font-medium text-[#FDF8F4]/60 uppercase tracking-wider">Google Rating</span>
                             </div>
-                        </div>
-
-                        {/* Floating Badges */}
-                        <div className="floating-badge-1 absolute top-12 lg:top-24 -left-4 lg:left-0 z-5">
-                            <div className="bg-white/70 backdrop-blur-md border border-white/60 rounded-full px-4 py-2 flex items-center gap-2 shadow-lg whitespace-nowrap">
-                                <Check className="w-4 h-4 text-[#C99A6B]" />
-                                <span className="text-sm font-medium text-[#2B1D17]">✓ Certified Professionals</span>
+                            
+                            <div className="trust-anim flex flex-col items-center lg:items-start space-y-1">
+                                <span className="text-2xl font-bold text-[#D4AF37]">5000+</span>
+                                <span className="text-xs font-medium text-[#FDF8F4]/60 uppercase tracking-wider text-center lg:text-left">Happy Clients</span>
                             </div>
-                        </div>
 
-                        <div className="floating-badge-2 absolute top-1/3 -right-6 lg:right-0 z-5">
-                            <div className="bg-white/70 backdrop-blur-md border border-white/60 rounded-full px-4 py-2 flex items-center gap-2 shadow-lg whitespace-nowrap">
-                                <Check className="w-4 h-4 text-[#C99A6B]" />
-                                <span className="text-sm font-medium text-[#2B1D17]">✓ Premium Products</span>
+                            <div className="trust-anim flex flex-col items-center lg:items-start space-y-1">
+                                <span className="text-2xl font-bold text-[#D4AF37]">10+</span>
+                                <span className="text-xs font-medium text-[#FDF8F4]/60 uppercase tracking-wider text-center lg:text-left">Years Exp.</span>
                             </div>
-                        </div>
 
-                        <div className="floating-badge-3 absolute bottom-32 -right-4 lg:right-0 z-5">
-                            <div className="bg-white/70 backdrop-blur-md border border-white/60 rounded-full px-4 py-2 flex items-center gap-2 shadow-lg whitespace-nowrap">
-                                <Check className="w-4 h-4 text-[#C99A6B]" />
-                                <span className="text-sm font-medium text-[#2B1D17]">✓ Personalized Care</span>
+                            <div className="trust-anim flex flex-col items-center lg:items-start space-y-1">
+                                <CheckCircle className="w-7 h-7 text-[#D4AF37] mb-1" />
+                                <span className="text-xs font-medium text-[#FDF8F4]/60 uppercase tracking-wider text-center lg:text-left">Certified<br/>Pros</span>
                             </div>
                         </div>
                     </div>
+
+                    {/* Right Column - Booking Card (Spans 5 columns on Desktop) */}
+                    <div className="lg:col-span-5 flex justify-center lg:justify-end pb-12 lg:pb-0">
+                        <div 
+                            ref={rightRef}
+                            className="w-full max-w-md bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-[24px] shadow-[0_8px_32px_rgba(0,0,0,0.3)] relative overflow-hidden"
+                        >
+                            {/* Glass reflection effect */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent pointer-events-none" />
+                            
+                            <h3 className="font-serif text-3xl text-[#FDF8F4] font-bold mb-6 text-center">
+                                Book Your <span className="text-[#D4AF37] italic">Session</span>
+                            </h3>
+
+                            <form onSubmit={handleBooking} className="space-y-5 relative z-10">
+                                {/* Service Selection */}
+                                <div className="space-y-2">
+                                    <label className="text-sm font-medium text-[#FDF8F4]/80 flex items-center gap-2">
+                                        <Scissors className="w-4 h-4 text-[#D4AF37]" /> Service Needed
+                                    </label>
+                                    <div className="relative">
+                                        <select 
+                                            required
+                                            className="w-full bg-[#1A1A1A]/50 border border-white/20 rounded-xl px-4 py-3 text-[#FDF8F4] appearance-none focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all"
+                                            value={formData.service}
+                                            onChange={(e) => setFormData({...formData, service: e.target.value})}
+                                        >
+                                            <option value="" disabled className="text-black">Select a service...</option>
+                                            <option value="Bridal Makeup" className="text-black">Bridal Makeup</option>
+                                            <option value="Party Makeup" className="text-black">Party Makeup</option>
+                                            <option value="Hair Styling & Cut" className="text-black">Hair Styling & Cut</option>
+                                            <option value="Facial & Skincare" className="text-black">Facial & Skincare</option>
+                                            <option value="Manicure / Pedicure" className="text-black">Manicure / Pedicure</option>
+                                            <option value="Other Service" className="text-black">Other Service</option>
+                                        </select>
+                                        <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
+                                            <svg className="w-4 h-4 text-[#D4AF37]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Date Selection */}
+                                <div className="space-y-2">
+                                    <label className="text-sm font-medium text-[#FDF8F4]/80 flex items-center gap-2">
+                                        <Calendar className="w-4 h-4 text-[#D4AF37]" /> Preferred Date
+                                    </label>
+                                    <input 
+                                        type="date" 
+                                        required
+                                        className="w-full bg-[#1A1A1A]/50 border border-white/20 rounded-xl px-4 py-3 text-[#FDF8F4] focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all [color-scheme:dark]"
+                                        value={formData.date}
+                                        onChange={(e) => setFormData({...formData, date: e.target.value})}
+                                    />
+                                </div>
+
+                                {/* Phone Number */}
+                                <div className="space-y-2">
+                                    <label className="text-sm font-medium text-[#FDF8F4]/80 flex items-center gap-2">
+                                        <Phone className="w-4 h-4 text-[#D4AF37]" /> Phone Number
+                                    </label>
+                                    <input 
+                                        type="tel" 
+                                        placeholder="+91 XXXXX XXXXX"
+                                        required
+                                        className="w-full bg-[#1A1A1A]/50 border border-white/20 rounded-xl px-4 py-3 text-[#FDF8F4] placeholder:text-white/30 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] transition-all"
+                                        value={formData.phone}
+                                        onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                                    />
+                                </div>
+
+                                <Button 
+                                    type="submit"
+                                    className="w-full bg-[#D4AF37] hover:bg-[#b59228] text-[#1A1A1A] py-6 rounded-xl font-bold text-lg mt-2 transition-all duration-300 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)]"
+                                >
+                                    Confirm Booking
+                                </Button>
+                            </form>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
