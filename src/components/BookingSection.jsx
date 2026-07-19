@@ -188,7 +188,7 @@ export const BookingSection = () => {
                                             Working Hours
                                         </h3>
                                         <p className="text-[#8B5E3C]">
-                                            <span className="font-semibold">Mon-Thu, Sat-Sun:</span> 10:00 AM - 8:00 PM
+                                            <span className="font-semibold">Mon-Sun:</span> 10:00 AM - 8:00 PM
                                             <br />
                                             <span className="font-semibold">Friday:</span> 4:00 PM - 8:00 PM
                                         </p>

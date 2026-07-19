@@ -160,7 +160,7 @@ export const HeroSection = () => {
                         <div className="flex flex-col sm:flex-row gap-6 pt-2 text-sm font-medium text-[#8B5E3C]">
                             <div className="flex items-center gap-2">
                                 <Phone className="w-5 h-5 text-[#C99A6B]" />
-                                <span>+91 98765 43210</span>
+                                <span>+91 82940 40050</span>
                             </div>
                             <div className="flex items-center gap-2">
                                 <Clock className="w-5 h-5 text-[#C99A6B]" />

@@ -81,7 +81,7 @@ export const ContactSection = () => {
                                         <h3 className="mb-2 font-semibold text-foreground">Email</h3>
                                         <p className="text-muted-foreground">
                                             <a
-                                                href="mailto:info@glambeautystudio.com"
+                                                href="mailto:zebarifrzsus@gmail.com"
                                                 className="cursor-pointer text-primary hover:underline"
                                             >
                                                 zebarifrzsus@gmail.com

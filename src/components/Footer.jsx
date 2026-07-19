@@ -31,9 +31,9 @@ export const Footer = () => (
                             <li>Shop No - G13, Sahara River View</li>
                             <li>Old Purulia Road, Kumar Basti</li>
                             <li>Mango, Jamshedpur 831012</li>
-                            <li className="pt-2"><strong>Phone:</strong> +91 98765 43210</li>
-                            <li><strong>Email:</strong> info@glambeautystudio.com</li>
-                            <li className="pt-2 text-[#C99A6B] font-medium">Open Mon-Sun: 10AM - 8PM</li>
+                            <li className="pt-2"><strong>Phone:</strong> +91 82940 40050</li>
+                            <li><strong>Email:</strong> zebarifrzsus@gmail.com</li>
+                            <li className="pt-2 text-[#C99A6B] font-medium">Mon-Sun - 10AM to 8PM</li>
                         </ul>
                     </div>
 
