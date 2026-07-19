@@ -399,7 +399,7 @@ export const TestimonialCarousel = () => {
         if (!autoplay) return;
 
         autoplayRef.current = setInterval(() => {
-            setCurrentIndex((prev) => (prev + 3) % testimonials.length);
+            setCurrentIndex((prev) => (prev + 3) % displayTestimonials.length);
         }, 5000);
 
         return () => clearInterval(autoplayRef.current);
@@ -412,7 +412,7 @@ export const TestimonialCarousel = () => {
     };
 
     const nextSlide = () => {
-        setCurrentIndex((prev) => (prev + 3) % testimonials.length);
+        setCurrentIndex((prev) => (prev + 3) % displayTestimonials.length);
         setAutoplay(false);
         setTimeout(() => setAutoplay(true), 8000);
     };
@@ -420,17 +420,17 @@ export const TestimonialCarousel = () => {
     const prevSlide = () => {
         setCurrentIndex((prev) => {
             let next = prev - 3;
-            while (next < 0) next += testimonials.length;
-            return next % testimonials.length;
+            while (next < 0) next += displayTestimonials.length;
+            return next % displayTestimonials.length;
         });
         setAutoplay(false);
         setTimeout(() => setAutoplay(true), 8000);
     };
 
     const visibleSlides = [
-        testimonials[currentIndex],
-        testimonials[(currentIndex + 1) % testimonials.length],
-        testimonials[(currentIndex + 2) % testimonials.length],
+        displayTestimonials[currentIndex],
+        displayTestimonials[(currentIndex + 1) % displayTestimonials.length],
+        displayTestimonials[(currentIndex + 2) % displayTestimonials.length],
     ];
 
     return (
@@ -526,7 +526,7 @@ export const TestimonialCarousel = () => {
 
                             {/* Number Indicator */}
                             <div className="flex items-center justify-center font-semibold text-[#8B5E3C] bg-[#FAF7F4] px-6 py-2 rounded-full shadow-sm border border-[#E8CBAF]">
-                                {currentIndex + 1} / {testimonials.length}
+                                Page {Math.floor(currentIndex / 3) + 1} / {Math.ceil(displayTestimonials.length / 3)}
                             </div>
 
                             {/* Next Button */}
