@@ -52,6 +52,7 @@ export const BeautyTransformationsSection = () => {
     const containerRef = useRef(null);
     const [selectedImage, setSelectedImage] = useState(null);
     const [sliderPositions, setSliderPositions] = useState({});
+    const [modalSliderPosition, setModalSliderPosition] = useState(50);
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -161,9 +162,9 @@ export const BeautyTransformationsSection = () => {
 
                                         {/* Before Image (Overlay) */}
                                         <div
-                                            className="absolute inset-0 overflow-hidden"
+                                            className="absolute inset-0"
                                             style={{
-                                                width: `${sliderPositions[item.id] || 50}%`,
+                                                clipPath: `polygon(0 0, ${sliderPositions[item.id] || 50}% 0, ${sliderPositions[item.id] || 50}% 100%, 0 100%)`,
                                             }}
                                         >
                                             <img
@@ -236,24 +237,73 @@ export const BeautyTransformationsSection = () => {
 
             {/* Lightbox Modal */}
             {selectedImage && (
-                <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
-                    <div className="relative max-w-4xl w-full">
+                <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+                    <div className="relative max-w-5xl w-full">
                         <button
-                            onClick={() => setSelectedImage(null)}
-                            className="absolute -top-10 right-0 text-white hover:text-[#C99A6B] transition-colors"
+                            onClick={() => {
+                                setSelectedImage(null);
+                                setModalSliderPosition(50);
+                            }}
+                            className="absolute -top-12 right-0 text-white hover:text-[#C99A6B] transition-colors"
                         >
                             <X className="w-8 h-8" />
                         </button>
-                        <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden">
+                        <div 
+                            className="relative h-[60vh] md:h-[80vh] rounded-2xl overflow-hidden cursor-ew-resize"
+                            onMouseMove={(e) => {
+                                const rect = e.currentTarget.getBoundingClientRect();
+                                const position = ((e.clientX - rect.left) / rect.width) * 100;
+                                setModalSliderPosition(Math.max(0, Math.min(100, position)));
+                            }}
+                            onTouchMove={(e) => {
+                                const rect = e.currentTarget.getBoundingClientRect();
+                                const position = ((e.touches[0].clientX - rect.left) / rect.width) * 100;
+                                setModalSliderPosition(Math.max(0, Math.min(100, position)));
+                            }}
+                        >
                             <img
                                 src={selectedImage.after}
-                                alt="Full view"
-                                className="w-full h-full object-cover"
+                                alt="After Full view"
+                                className="w-full h-full object-contain bg-black/50"
                             />
+                            
+                            <div
+                                className="absolute inset-0"
+                                style={{
+                                    clipPath: `polygon(0 0, ${modalSliderPosition}% 0, ${modalSliderPosition}% 100%, 0 100%)`,
+                                }}
+                            >
+                                <img
+                                    src={selectedImage.before}
+                                    alt="Before Full view"
+                                    className="w-full h-full object-contain bg-black/50"
+                                />
+                            </div>
+
+                            {/* Modal Slider Handle */}
+                            <div
+                                className="absolute top-0 bottom-0 w-1 bg-white"
+                                style={{
+                                    left: `${modalSliderPosition}%`,
+                                }}
+                            >
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full p-4 shadow-lg">
+                                    <ChevronLeft className="w-6 h-6 text-[#C99A6B] absolute left-1.5" />
+                                    <ChevronRight className="w-6 h-6 text-[#C99A6B] absolute right-1.5" />
+                                </div>
+                            </div>
+
+                            {/* Modal Labels */}
+                            <div className="absolute top-6 left-6 bg-black/50 text-white px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-sm">
+                                Before
+                            </div>
+                            <div className="absolute top-6 right-6 bg-[#C99A6B]/80 text-white px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-sm">
+                                After
+                            </div>
                         </div>
-                        <div className="mt-4 text-center text-white">
-                            <p className="text-[#C99A6B] font-semibold">{selectedImage.service}</p>
-                            <h2 className="text-2xl font-bold">{selectedImage.title}</h2>
+                        <div className="mt-6 text-center text-white">
+                            <p className="text-[#C99A6B] font-semibold text-lg">{selectedImage.service}</p>
+                            <h2 className="text-3xl font-bold">{selectedImage.title}</h2>
                         </div>
                     </div>
                 </div>
