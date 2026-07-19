@@ -148,7 +148,7 @@ export const BookingSection = () => {
                                             href="tel:+918294040050"
                                             className="text-[#C99A6B] hover:text-[#b8894f] font-semibold transition-colors"
                                         >
-                                            +91 8294040050
+                                            8294040050
                                         </a>
                                         <p className="text-[#8B5E3C] text-sm mt-1">
                                             Call or WhatsApp us anytime
@@ -189,8 +189,6 @@ export const BookingSection = () => {
                                         </h3>
                                         <p className="text-[#8B5E3C]">
                                             <span className="font-semibold">Mon-Sun:</span> 10:00 AM - 8:00 PM
-                                            <br />
-                                            <span className="font-semibold">Friday:</span> 4:00 PM - 8:00 PM
                                         </p>
                                     </div>
                                 </div>
