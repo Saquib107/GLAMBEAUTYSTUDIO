@@ -1,7 +1,7 @@
 import re
 import urllib.parse
 
-file_path = r"c:\PROJECTS\beauty-studio\src\components\TestimonialCarousel.jsx"
+file_path = r"c:\PROJECTS\beauty-studio\src\components\TestimonialsSection.jsx"
 
 with open(file_path, "r", encoding="utf-8") as f:
     content = f.read()
