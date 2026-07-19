@@ -249,7 +249,7 @@ export const BeautyTransformationsSection = () => {
                             <X className="w-8 h-8" />
                         </button>
                         <div 
-                            className="relative h-[60vh] md:h-[80vh] rounded-2xl overflow-hidden cursor-ew-resize"
+                            className="relative max-h-[60vh] md:max-h-[80vh] rounded-2xl overflow-hidden cursor-ew-resize mx-auto w-fit shadow-2xl"
                             onMouseMove={(e) => {
                                 const rect = e.currentTarget.getBoundingClientRect();
                                 const position = ((e.clientX - rect.left) / rect.width) * 100;
@@ -264,7 +264,7 @@ export const BeautyTransformationsSection = () => {
                             <img
                                 src={selectedImage.after}
                                 alt="After Full view"
-                                className="w-full h-full object-contain bg-black/50"
+                                className="max-h-[60vh] md:max-h-[80vh] w-auto object-contain block pointer-events-none"
                             />
                             
                             <div
@@ -276,28 +276,28 @@ export const BeautyTransformationsSection = () => {
                                 <img
                                     src={selectedImage.before}
                                     alt="Before Full view"
-                                    className="w-full h-full object-contain bg-black/50"
+                                    className="w-full h-full object-cover pointer-events-none"
                                 />
                             </div>
 
                             {/* Modal Slider Handle */}
                             <div
-                                className="absolute top-0 bottom-0 w-1 bg-white"
+                                className="absolute top-0 bottom-0 w-1 bg-white pointer-events-none"
                                 style={{
                                     left: `${modalSliderPosition}%`,
                                 }}
                             >
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full p-4 shadow-lg">
-                                    <ChevronLeft className="w-6 h-6 text-[#C99A6B] absolute left-1.5" />
-                                    <ChevronRight className="w-6 h-6 text-[#C99A6B] absolute right-1.5" />
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg flex items-center justify-center">
+                                    <ChevronLeft className="w-5 h-5 text-[#C99A6B] absolute left-1" />
+                                    <ChevronRight className="w-5 h-5 text-[#C99A6B] absolute right-1" />
                                 </div>
                             </div>
 
                             {/* Modal Labels */}
-                            <div className="absolute top-6 left-6 bg-black/50 text-white px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-sm">
+                            <div className="absolute top-6 left-6 bg-black/60 text-white px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-sm pointer-events-none">
                                 Before
                             </div>
-                            <div className="absolute top-6 right-6 bg-[#C99A6B]/80 text-white px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-sm">
+                            <div className="absolute top-6 right-6 bg-[#C99A6B]/90 text-white px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-sm pointer-events-none">
                                 After
                             </div>
                         </div>
