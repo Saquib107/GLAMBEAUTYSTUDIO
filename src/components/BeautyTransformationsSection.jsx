@@ -258,10 +258,9 @@ export const BeautyTransformationsSection = () => {
                     </div>
 
                     {/* Slider Container */}
-                    <div className="relative w-full max-w-5xl mx-auto flex-1 flex items-center justify-center min-h-0">
+                    <div className="relative w-full max-w-5xl mx-auto flex-1 min-h-0">
                         <div 
-                            className="relative w-auto h-full max-h-full rounded-xl md:rounded-2xl overflow-hidden cursor-ew-resize mx-auto shadow-2xl flex items-center justify-center"
-                            style={{ aspectRatio: "auto" }}
+                            className="relative w-full h-full max-h-[70vh] md:max-h-[85vh] rounded-xl md:rounded-2xl overflow-hidden cursor-ew-resize shadow-2xl"
                             onMouseMove={(e) => {
                                 const rect = e.currentTarget.getBoundingClientRect();
                                 const position = ((e.clientX - rect.left) / rect.width) * 100;
@@ -273,19 +272,19 @@ export const BeautyTransformationsSection = () => {
                                 setModalSliderPosition(Math.max(0, Math.min(100, position)));
                             }}
                         >
-                            {/* After Image & Label */}
+                            {/* After Image & Label (Base Layer) */}
                             <img
                                 src={selectedImage.after}
                                 alt="After Full view"
-                                className="w-auto h-full max-w-full object-contain block pointer-events-none"
+                                className="absolute inset-0 w-full h-full object-contain block pointer-events-none"
                             />
-                            <div className="absolute top-4 right-4 bg-[#C99A6B]/80 border border-white/20 text-white px-5 py-2 rounded-full text-xs uppercase tracking-widest font-semibold backdrop-blur-md shadow-sm pointer-events-none">
+                            <div className="absolute top-4 right-4 md:top-6 md:right-6 bg-[#C99A6B]/80 border border-white/20 text-white px-5 py-2 rounded-full text-xs uppercase tracking-widest font-semibold backdrop-blur-md shadow-sm pointer-events-none z-10">
                                 After
                             </div>
                             
-                            {/* Before Image Overlay & Label */}
+                            {/* Before Image Overlay & Label (Top Layer) */}
                             <div
-                                className="absolute inset-0 flex justify-center items-center"
+                                className="absolute inset-0 z-20"
                                 style={{
                                     clipPath: `polygon(0 0, ${modalSliderPosition}% 0, ${modalSliderPosition}% 100%, 0 100%)`,
                                 }}
@@ -293,16 +292,16 @@ export const BeautyTransformationsSection = () => {
                                 <img
                                     src={selectedImage.before}
                                     alt="Before Full view"
-                                    className="w-auto h-full max-w-full object-contain pointer-events-none"
+                                    className="absolute inset-0 w-full h-full object-contain pointer-events-none"
                                 />
-                                <div className="absolute top-4 left-4 bg-black/40 border border-white/20 text-white px-5 py-2 rounded-full text-xs uppercase tracking-widest font-semibold backdrop-blur-md shadow-sm pointer-events-none">
+                                <div className="absolute top-4 left-4 md:top-6 md:left-6 bg-black/40 border border-white/20 text-white px-5 py-2 rounded-full text-xs uppercase tracking-widest font-semibold backdrop-blur-md shadow-sm pointer-events-none">
                                     Before
                                 </div>
                             </div>
 
                             {/* Modal Slider Handle */}
                             <div
-                                className="absolute top-0 bottom-0 w-[2px] bg-white/80 shadow-[0_0_15px_rgba(0,0,0,0.5)] pointer-events-none"
+                                className="absolute top-0 bottom-0 w-[2px] bg-white/80 shadow-[0_0_15px_rgba(0,0,0,0.5)] pointer-events-none z-30"
                                 style={{
                                     left: `${modalSliderPosition}%`,
                                 }}
