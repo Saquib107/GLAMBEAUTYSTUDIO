@@ -231,19 +231,29 @@ export const BeautyTransformationsSection = () => {
 
             {/* Lightbox Modal */}
             {selectedImage && (
-                <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
-                    <div className="relative max-w-5xl w-full">
-                        <button
-                            onClick={() => {
-                                setSelectedImage(null);
-                                setModalSliderPosition(50);
-                            }}
-                            className="absolute -top-12 right-0 text-white hover:text-[#C99A6B] transition-colors"
-                        >
-                            <X className="w-8 h-8" />
-                        </button>
+                <div className="fixed inset-0 bg-black/95 z-[100] flex flex-col items-center justify-center p-0 md:p-6">
+                    {/* Close Button - Safely positioned */}
+                    <button
+                        onClick={() => {
+                            setSelectedImage(null);
+                            setModalSliderPosition(50);
+                        }}
+                        className="absolute top-4 right-4 md:top-6 md:right-6 text-white hover:text-[#C99A6B] transition-colors z-[110] bg-black/40 p-2 rounded-full backdrop-blur-md"
+                    >
+                        <X className="w-6 h-6 md:w-8 md:h-8" />
+                    </button>
+
+                    <div className="relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center h-full max-h-screen">
+                        
+                        {/* Text Info Mobile - top */}
+                        <div className="md:hidden w-full text-center text-white absolute top-16 left-0 right-0 z-50 px-4">
+                            <p className="text-[#C99A6B] font-semibold text-sm">{selectedImage.service}</p>
+                            <h2 className="text-xl font-bold">{selectedImage.title}</h2>
+                        </div>
+
+                        {/* Slider Container */}
                         <div 
-                            className="relative max-h-[60vh] md:max-h-[80vh] rounded-2xl overflow-hidden cursor-ew-resize mx-auto w-fit shadow-2xl"
+                            className="relative w-full md:w-auto md:max-w-full h-auto max-h-[70vh] md:max-h-[85vh] md:rounded-2xl overflow-hidden cursor-ew-resize mx-auto shadow-2xl flex justify-center items-center"
                             onMouseMove={(e) => {
                                 const rect = e.currentTarget.getBoundingClientRect();
                                 const position = ((e.clientX - rect.left) / rect.width) * 100;
@@ -255,14 +265,16 @@ export const BeautyTransformationsSection = () => {
                                 setModalSliderPosition(Math.max(0, Math.min(100, position)));
                             }}
                         >
+                            {/* After Image */}
                             <img
                                 src={selectedImage.after}
                                 alt="After Full view"
-                                className="max-h-[60vh] md:max-h-[80vh] w-auto object-contain block pointer-events-none"
+                                className="w-full md:w-auto h-auto max-h-[70vh] md:max-h-[85vh] object-contain block pointer-events-none"
                             />
                             
+                            {/* Before Image Overlay */}
                             <div
-                                className="absolute inset-0"
+                                className="absolute inset-0 flex justify-center items-center"
                                 style={{
                                     clipPath: `polygon(0 0, ${modalSliderPosition}% 0, ${modalSliderPosition}% 100%, 0 100%)`,
                                 }}
@@ -270,7 +282,7 @@ export const BeautyTransformationsSection = () => {
                                 <img
                                     src={selectedImage.before}
                                     alt="Before Full view"
-                                    className="w-full h-full object-cover pointer-events-none"
+                                    className="w-full md:w-auto h-auto max-h-[70vh] md:max-h-[85vh] object-contain pointer-events-none"
                                 />
                             </div>
 
@@ -281,14 +293,15 @@ export const BeautyTransformationsSection = () => {
                                     left: `${modalSliderPosition}%`,
                                 }}
                             >
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-md rounded-full w-12 h-12 flex items-center justify-center shadow-[0_4px_16px_rgba(0,0,0,0.3)] border-2 border-white/50">
-                                    <ChevronLeft className="w-5 h-5 text-[#8B5E3C] -mr-[2px]" />
-                                    <ChevronRight className="w-5 h-5 text-[#8B5E3C] -ml-[2px]" />
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-md rounded-full w-10 h-10 md:w-12 md:h-12 flex items-center justify-center shadow-[0_4px_16px_rgba(0,0,0,0.3)] border-2 border-white/50">
+                                    <ChevronLeft className="w-4 h-4 md:w-5 md:h-5 text-[#8B5E3C] -mr-[2px]" />
+                                    <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-[#8B5E3C] -ml-[2px]" />
                                 </div>
                             </div>
-
                         </div>
-                        <div className="mt-6 text-center text-white">
+
+                        {/* Text Info Desktop - bottom */}
+                        <div className="hidden md:block mt-6 text-center text-white">
                             <p className="text-[#C99A6B] font-semibold text-lg">{selectedImage.service}</p>
                             <h2 className="text-3xl font-bold">{selectedImage.title}</h2>
                         </div>
