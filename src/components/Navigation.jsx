@@ -27,10 +27,10 @@ export const Navigation = () => {
                     {/* Logo */}
                     <button
                         onClick={() => scrollToSection("hero")}
-                        className="flex items-center gap-3 font-serif text-2xl font-bold text-[#2B1D17] transition hover:text-[#C99A6B] cursor-pointer"
+                        className="flex items-center gap-2 sm:gap-3 font-serif text-lg sm:text-2xl font-bold text-[#2B1D17] transition hover:text-[#C99A6B] cursor-pointer"
                     >
-                        <img src={logoImage} alt="Glam Beauty Studio Logo" className="h-12 lg:h-14 w-auto object-contain rounded-full shadow-sm scale-[1.15]" />
-                        <span className="hidden sm:inline-block">Glam Beauty Studio</span>
+                        <img src={logoImage} alt="Glam Beauty Studio Logo" className="h-10 sm:h-12 lg:h-14 w-auto object-contain rounded-full shadow-sm scale-[1.15]" />
+                        <span className="inline-block">Glam Beauty Studio</span>
                     </button>
 
 
