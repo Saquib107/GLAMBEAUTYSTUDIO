@@ -30,7 +30,7 @@ export const Navigation = () => {
                         className="flex items-center gap-3 font-serif text-2xl font-bold text-[#2B1D17] transition hover:text-[#C99A6B] cursor-pointer"
                     >
                         <img src={logoImage} alt="Glam Beauty Studio Logo" className="h-12 w-auto object-contain rounded-full shadow-sm" />
-                        <span className="hidden sm:inline-block">Glam Beauty</span>
+                        <span className="hidden sm:inline-block">Glam Beauty Studio</span>
                     </button>
 
 

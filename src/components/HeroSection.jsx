@@ -93,7 +93,7 @@ export const HeroSection = () => {
                         <div className="hero-eyebrow flex items-center justify-center lg:justify-start gap-4">
                             <div className="w-16 h-[1px] bg-gradient-to-r from-transparent to-[#C99A6B] lg:from-[#C99A6B] lg:to-[#C99A6B]" />
                             <span className="text-xs lg:text-sm font-medium tracking-[0.2em] text-[#C99A6B] uppercase">
-                                WELCOME TO GLAM BEAUTY
+                                WELCOME TO GLAM BEAUTY STUDIO
                             </span>
                             <div className="w-16 h-[1px] bg-gradient-to-l from-transparent to-[#C99A6B] lg:hidden" />
                         </div>
@@ -106,7 +106,7 @@ export const HeroSection = () => {
                         {/* Description */}
                         <div className="space-y-2 lg:space-y-3">
                             <p className="hero-subheadline text-base lg:text-lg text-[#8B5E3C]/90 leading-relaxed font-light mx-auto lg:mx-0 max-w-lg whitespace-normal">
-                                Step into a world of refined beauty and relaxation. At Glam Beauty, every detail is thoughtfully crafted to make you feel confident, radiant, and beautifully yourself.
+                                Step into a world of refined beauty and relaxation. At Glam Beauty Studio, every detail is thoughtfully crafted to make you feel confident, radiant, and beautifully yourself.
                             </p>
 
                             {/* Elegant Tagline / Signature */}
