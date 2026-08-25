@@ -159,9 +159,16 @@ export const BeautyTransformationsSection = () => {
                                             loading="lazy"
                                             className="w-full h-full object-cover select-none pointer-events-none"
                                         />
-                                        {/* After Label - Bottom Layer */}
-                                        <div className="absolute top-4 right-4 bg-[#C99A6B]/80 border border-white/20 text-white px-3.5 py-1.5 rounded-full text-[10px] uppercase tracking-widest font-semibold backdrop-blur-md shadow-sm pointer-events-none">
-                                            After
+                                        {/* After Label - Bottom Layer (Clipped to disappear as slider moves right) */}
+                                        <div
+                                            className="absolute inset-0 z-10 pointer-events-none"
+                                            style={{
+                                                clipPath: `polygon(${sliderPositions[item.id] || 50}% 0, 100% 0, 100% 100%, ${sliderPositions[item.id] || 50}% 100%)`,
+                                            }}
+                                        >
+                                            <div className="absolute top-4 right-4 bg-[#C99A6B]/80 border border-white/20 text-white px-3.5 py-1.5 rounded-full text-[10px] uppercase tracking-widest font-semibold backdrop-blur-md shadow-sm">
+                                                After
+                                            </div>
                                         </div>
 
                                         {/* Before Image (Overlay) with Label */}
@@ -278,8 +285,16 @@ export const BeautyTransformationsSection = () => {
                                 alt="After Full view"
                                 className="absolute inset-0 w-full h-full object-contain block pointer-events-none"
                             />
-                            <div className="absolute top-4 right-4 md:top-6 md:right-6 bg-[#C99A6B]/80 border border-white/20 text-white px-5 py-2 rounded-full text-xs uppercase tracking-widest font-semibold backdrop-blur-md shadow-sm pointer-events-none z-10">
-                                After
+                            {/* After Label - Top Layer (Clipped to disappear as slider moves right) */}
+                            <div
+                                className="absolute inset-0 z-10 pointer-events-none"
+                                style={{
+                                    clipPath: `polygon(${modalSliderPosition}% 0, 100% 0, 100% 100%, ${modalSliderPosition}% 100%)`,
+                                }}
+                            >
+                                <div className="absolute top-4 right-4 md:top-6 md:right-6 bg-[#C99A6B]/80 border border-white/20 text-white px-5 py-2 rounded-full text-xs uppercase tracking-widest font-semibold backdrop-blur-md shadow-sm">
+                                    After
+                                </div>
                             </div>
                             
                             {/* Before Image Overlay & Label (Top Layer) */}
