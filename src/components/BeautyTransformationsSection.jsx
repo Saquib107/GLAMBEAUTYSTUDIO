@@ -152,15 +152,19 @@ export const BeautyTransformationsSection = () => {
                                             }));
                                         }}
                                     >
-                                        {/* After Image (Background) */}
+                                        {/* After Image (Background) with Label */}
                                         <img
                                             src={item.after}
                                             alt="After"
                                             loading="lazy"
                                             className="w-full h-full object-cover select-none pointer-events-none"
                                         />
+                                        {/* After Label - Bottom Layer */}
+                                        <div className="absolute top-4 right-4 bg-[#C99A6B]/80 border border-white/20 text-white px-3.5 py-1.5 rounded-full text-[10px] uppercase tracking-widest font-semibold backdrop-blur-md shadow-sm pointer-events-none">
+                                            After
+                                        </div>
 
-                                        {/* Before Image (Overlay) */}
+                                        {/* Before Image (Overlay) with Label */}
                                         <div
                                             className="absolute inset-0"
                                             style={{
@@ -173,6 +177,10 @@ export const BeautyTransformationsSection = () => {
                                                 loading="lazy"
                                                 className="w-full h-full object-cover select-none pointer-events-none"
                                             />
+                                            {/* Before Label - Top Layer, gets clipped automatically */}
+                                            <div className="absolute top-4 left-4 bg-black/40 border border-white/20 text-white px-3.5 py-1.5 rounded-full text-[10px] uppercase tracking-widest font-semibold backdrop-blur-md shadow-sm pointer-events-none">
+                                                Before
+                                            </div>
                                         </div>
 
                                         {/* Elegant Slider Handle */}
@@ -231,29 +239,29 @@ export const BeautyTransformationsSection = () => {
 
             {/* Lightbox Modal */}
             {selectedImage && (
-                <div className="fixed inset-0 bg-black/95 z-[100] flex flex-col items-center justify-center p-0 md:p-6">
-                    {/* Close Button - Safely positioned */}
-                    <button
-                        onClick={() => {
-                            setSelectedImage(null);
-                            setModalSliderPosition(50);
-                        }}
-                        className="absolute top-4 right-4 md:top-6 md:right-6 text-white hover:text-[#C99A6B] transition-colors z-[110] bg-black/40 p-2 rounded-full backdrop-blur-md"
-                    >
-                        <X className="w-6 h-6 md:w-8 md:h-8" />
-                    </button>
-
-                    <div className="relative w-full max-w-6xl mx-auto flex flex-col items-center justify-center h-full max-h-screen">
-                        
-                        {/* Text Info Mobile - top */}
-                        <div className="md:hidden w-full text-center text-white absolute top-16 left-0 right-0 z-50 px-4">
-                            <p className="text-[#C99A6B] font-semibold text-sm">{selectedImage.service}</p>
-                            <h2 className="text-xl font-bold">{selectedImage.title}</h2>
+                <div className="fixed inset-0 bg-black/95 z-[100] flex flex-col p-4 md:p-6 overflow-hidden">
+                    {/* Top Bar: Text Info & Close Button */}
+                    <div className="relative w-full flex justify-between items-start z-[110] mb-4 md:mb-6 shrink-0">
+                        <div className="text-white">
+                            <p className="text-[#C99A6B] font-semibold text-sm md:text-lg">{selectedImage.service}</p>
+                            <h2 className="text-xl md:text-3xl font-bold pr-12">{selectedImage.title}</h2>
                         </div>
+                        <button
+                            onClick={() => {
+                                setSelectedImage(null);
+                                setModalSliderPosition(50);
+                            }}
+                            className="text-white hover:text-[#C99A6B] transition-colors bg-black/40 p-2 rounded-full backdrop-blur-md shrink-0"
+                        >
+                            <X className="w-6 h-6 md:w-8 md:h-8" />
+                        </button>
+                    </div>
 
-                        {/* Slider Container */}
+                    {/* Slider Container */}
+                    <div className="relative w-full max-w-5xl mx-auto flex-1 flex items-center justify-center min-h-0">
                         <div 
-                            className="relative w-full md:w-auto md:max-w-full h-auto max-h-[70vh] md:max-h-[85vh] md:rounded-2xl overflow-hidden cursor-ew-resize mx-auto shadow-2xl flex justify-center items-center"
+                            className="relative w-auto h-full max-h-full rounded-xl md:rounded-2xl overflow-hidden cursor-ew-resize mx-auto shadow-2xl flex items-center justify-center"
+                            style={{ aspectRatio: "auto" }}
                             onMouseMove={(e) => {
                                 const rect = e.currentTarget.getBoundingClientRect();
                                 const position = ((e.clientX - rect.left) / rect.width) * 100;
@@ -265,14 +273,17 @@ export const BeautyTransformationsSection = () => {
                                 setModalSliderPosition(Math.max(0, Math.min(100, position)));
                             }}
                         >
-                            {/* After Image */}
+                            {/* After Image & Label */}
                             <img
                                 src={selectedImage.after}
                                 alt="After Full view"
-                                className="w-full md:w-auto h-auto max-h-[70vh] md:max-h-[85vh] object-contain block pointer-events-none"
+                                className="w-auto h-full max-w-full object-contain block pointer-events-none"
                             />
+                            <div className="absolute top-4 right-4 bg-[#C99A6B]/80 border border-white/20 text-white px-5 py-2 rounded-full text-xs uppercase tracking-widest font-semibold backdrop-blur-md shadow-sm pointer-events-none">
+                                After
+                            </div>
                             
-                            {/* Before Image Overlay */}
+                            {/* Before Image Overlay & Label */}
                             <div
                                 className="absolute inset-0 flex justify-center items-center"
                                 style={{
@@ -282,8 +293,11 @@ export const BeautyTransformationsSection = () => {
                                 <img
                                     src={selectedImage.before}
                                     alt="Before Full view"
-                                    className="w-full md:w-auto h-auto max-h-[70vh] md:max-h-[85vh] object-contain pointer-events-none"
+                                    className="w-auto h-full max-w-full object-contain pointer-events-none"
                                 />
+                                <div className="absolute top-4 left-4 bg-black/40 border border-white/20 text-white px-5 py-2 rounded-full text-xs uppercase tracking-widest font-semibold backdrop-blur-md shadow-sm pointer-events-none">
+                                    Before
+                                </div>
                             </div>
 
                             {/* Modal Slider Handle */}
@@ -298,12 +312,6 @@ export const BeautyTransformationsSection = () => {
                                     <ChevronRight className="w-4 h-4 md:w-5 md:h-5 text-[#8B5E3C] -ml-[2px]" />
                                 </div>
                             </div>
-                        </div>
-
-                        {/* Text Info Desktop - bottom */}
-                        <div className="hidden md:block mt-6 text-center text-white">
-                            <p className="text-[#C99A6B] font-semibold text-lg">{selectedImage.service}</p>
-                            <h2 className="text-3xl font-bold">{selectedImage.title}</h2>
                         </div>
                     </div>
                 </div>
