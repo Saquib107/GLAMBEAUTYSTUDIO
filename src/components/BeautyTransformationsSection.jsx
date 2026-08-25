@@ -188,14 +188,6 @@ export const BeautyTransformationsSection = () => {
                                             </div>
                                         </div>
 
-                                        {/* Elegant Labels */}
-                                        <div className="absolute top-4 left-4 bg-black/40 border border-white/20 text-white px-3.5 py-1.5 rounded-full text-[10px] uppercase tracking-widest font-semibold backdrop-blur-md shadow-sm pointer-events-none">
-                                            Before
-                                        </div>
-                                        <div className="absolute top-4 right-4 bg-[#C99A6B]/80 border border-white/20 text-white px-3.5 py-1.5 rounded-full text-[10px] uppercase tracking-widest font-semibold backdrop-blur-md shadow-sm pointer-events-none">
-                                            After
-                                        </div>
-                                        
                                         {/* Expand Button */}
                                         <button
                                             onClick={(e) => {
@@ -295,13 +287,6 @@ export const BeautyTransformationsSection = () => {
                                 </div>
                             </div>
 
-                            {/* Modal Labels */}
-                            <div className="absolute top-6 left-6 bg-black/40 border border-white/20 text-white px-5 py-2 rounded-full text-xs uppercase tracking-widest font-semibold backdrop-blur-md shadow-sm pointer-events-none">
-                                Before
-                            </div>
-                            <div className="absolute top-6 right-6 bg-[#C99A6B]/80 border border-white/20 text-white px-5 py-2 rounded-full text-xs uppercase tracking-widest font-semibold backdrop-blur-md shadow-sm pointer-events-none">
-                                After
-                            </div>
                         </div>
                         <div className="mt-6 text-center text-white">
                             <p className="text-[#C99A6B] font-semibold text-lg">{selectedImage.service}</p>
