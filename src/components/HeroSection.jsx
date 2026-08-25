@@ -97,8 +97,9 @@ export const HeroSection = () => {
                     </div>
 
                     {/* Main Headline */}
-                    <h1 className="hero-headline font-serif text-5xl sm:text-6xl lg:text-[5rem] xl:text-[5.5rem] font-bold text-[#2B1D17] leading-[1.05] lg:leading-[1.02] tracking-tight whitespace-nowrap">
-                        Where Beauty Meets <span className="block text-[#8B5E3C] mt-2 lg:mt-3 italic font-medium">Timeless Elegance.</span>
+                    <h1 className="hero-headline font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] xl:text-[5.5rem] font-bold text-[#2B1D17] leading-[1.05] lg:leading-[1.02] tracking-tight flex flex-col items-center w-full">
+                        <span className="whitespace-normal sm:whitespace-nowrap text-center">Where Beauty Meets</span>
+                        <span className="text-[#8B5E3C] mt-1 lg:mt-3 italic font-medium text-center whitespace-normal sm:whitespace-nowrap">Timeless Elegance.</span>
                     </h1>
 
                     {/* Description */}
