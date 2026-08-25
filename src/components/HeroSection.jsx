@@ -82,7 +82,7 @@ export const HeroSection = () => {
             <div className="container mx-auto px-4 lg:px-8 relative z-10 flex flex-col justify-center">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
                     {/* Left Column - Content */}
-                    <div ref={leftRef} className="space-y-5 lg:space-y-6 max-w-lg mx-auto lg:mx-0 text-center lg:text-left z-10 relative">
+                    <div ref={leftRef} className="space-y-4 lg:space-y-5 max-w-xl mx-auto lg:mx-0 text-center lg:text-left z-10 relative">
                         
                         {/* Floating Decorative Icon near heading */}
                         <div className="float-element-1 absolute -top-10 -left-6 text-[#C99A6B]/40 hidden lg:block z-0">
@@ -99,22 +99,24 @@ export const HeroSection = () => {
                         </div>
 
                         {/* Main Headline */}
-                        <h1 className="hero-headline font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-[4rem] font-bold text-[#2B1D17] leading-[1.15] tracking-tight relative z-10">
+                        <h1 className="hero-headline font-serif text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-bold text-[#2B1D17] leading-[1.15] tracking-tight relative z-10 whitespace-nowrap">
                             Where Beauty Meets <span className="block text-[#8B5E3C] mt-1 lg:mt-2 italic font-medium">Timeless Elegance.</span>
                         </h1>
 
                         {/* Description */}
-                        <p className="hero-subheadline text-base lg:text-lg text-[#8B5E3C]/90 leading-relaxed font-light mx-auto lg:mx-0">
-                            Step into a world of refined beauty and relaxation. At Glam Beauty, every detail is thoughtfully crafted to make you feel confident, radiant, and beautifully yourself.
-                        </p>
+                        <div className="space-y-2 lg:space-y-3">
+                            <p className="hero-subheadline text-base lg:text-lg text-[#8B5E3C]/90 leading-relaxed font-light mx-auto lg:mx-0 max-w-lg whitespace-normal">
+                                Step into a world of refined beauty and relaxation. At Glam Beauty, every detail is thoughtfully crafted to make you feel confident, radiant, and beautifully yourself.
+                            </p>
 
-                        {/* Elegant Tagline / Signature */}
-                        <p className="hero-tagline text-sm lg:text-base font-serif italic text-[#C99A6B]/90 mt-2">
-                            — Your beauty, our passion.
-                        </p>
+                            {/* Elegant Tagline / Signature */}
+                            <p className="hero-tagline text-sm lg:text-base font-serif italic text-[#C99A6B]/90">
+                                “Your beauty, our passion.”
+                            </p>
+                        </div>
 
                         {/* CTA Buttons */}
-                        <div className="hero-buttons flex flex-col sm:flex-row gap-4 sm:gap-5 pt-3 justify-center lg:justify-start items-center">
+                        <div className="hero-buttons flex flex-col sm:flex-row gap-4 sm:gap-5 pt-2 justify-center lg:justify-start items-center">
                             <Button
                                 size="lg"
                                 className="hero-button bg-[#C99A6B] hover:bg-[#b8894f] text-white px-8 py-6 rounded-full text-sm lg:text-base font-semibold transition-all duration-300 w-full sm:w-auto shadow-sm"

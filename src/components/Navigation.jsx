@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoImage from "@/assets/logo.png";
 
 export const Navigation = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -26,12 +27,10 @@ export const Navigation = () => {
                     {/* Logo */}
                     <button
                         onClick={() => scrollToSection("hero")}
-                        className="flex items-center gap-2 font-serif text-xl font-bold text-[#2B1D17] transition hover:text-[#C99A6B] cursor-pointer"
+                        className="flex items-center gap-3 font-serif text-2xl font-bold text-[#2B1D17] transition hover:text-[#C99A6B] cursor-pointer"
                     >
-                        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#C99A6B]/10 text-[#C99A6B]">
-                            <Sparkles className="h-5 w-5" />
-                        </span>
-                        <span>Glam Beauty</span>
+                        <img src={logoImage} alt="Glam Beauty Studio Logo" className="h-12 w-auto object-contain rounded-full shadow-sm" />
+                        <span className="hidden sm:inline-block">Glam Beauty</span>
                     </button>
 
 
