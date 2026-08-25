@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, X, Maximize2 } from "lucide-react";
 
 const transformations = [
     {
@@ -137,7 +137,7 @@ export const BeautyTransformationsSection = () => {
                                 key={item.id}
                                 className="transformation-card group cursor-pointer"
                             >
-                                <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-80">
+                                <div className="relative overflow-hidden rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-shadow duration-500 h-80 border border-[#e5dcd2]">
                                     {/* Before/After Slider */}
                                     <div
                                         className="w-full h-full relative"
@@ -157,7 +157,7 @@ export const BeautyTransformationsSection = () => {
                                             src={item.after}
                                             alt="After"
                                             loading="lazy"
-                                            className="w-full h-full object-cover"
+                                            className="w-full h-full object-cover select-none pointer-events-none"
                                         />
 
                                         {/* Before Image (Overlay) */}
@@ -171,47 +171,49 @@ export const BeautyTransformationsSection = () => {
                                                 src={item.before}
                                                 alt="Before"
                                                 loading="lazy"
-                                                className="w-full h-full object-cover"
+                                                className="w-full h-full object-cover select-none pointer-events-none"
                                             />
                                         </div>
 
-                                        {/* Slider Handle */}
+                                        {/* Elegant Slider Handle */}
                                         <div
-                                            className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize"
+                                            className="absolute top-0 bottom-0 w-[1.5px] bg-white/80 shadow-[0_0_10px_rgba(0,0,0,0.3)] pointer-events-none"
                                             style={{
                                                 left: `${sliderPositions[item.id] || 50}%`,
                                             }}
                                         >
-                                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg">
-                                                <ChevronLeft className="w-4 h-4 text-[#C99A6B] absolute left-1" />
-                                                <ChevronRight className="w-4 h-4 text-[#C99A6B] absolute right-1" />
+                                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-md rounded-full w-10 h-10 flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.2)] border-[1.5px] border-white/50">
+                                                <ChevronLeft className="w-4 h-4 text-[#8B5E3C] -mr-[2px]" />
+                                                <ChevronRight className="w-4 h-4 text-[#8B5E3C] -ml-[2px]" />
                                             </div>
                                         </div>
 
-                                        {/* Labels */}
-                                        <div className="absolute top-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm">
+                                        {/* Elegant Labels */}
+                                        <div className="absolute top-4 left-4 bg-black/40 border border-white/20 text-white px-3.5 py-1.5 rounded-full text-[10px] uppercase tracking-widest font-semibold backdrop-blur-md shadow-sm pointer-events-none">
                                             Before
                                         </div>
-                                        <div className="absolute top-4 right-4 bg-[#C99A6B]/80 text-white px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-sm">
+                                        <div className="absolute top-4 right-4 bg-[#C99A6B]/80 border border-white/20 text-white px-3.5 py-1.5 rounded-full text-[10px] uppercase tracking-widest font-semibold backdrop-blur-md shadow-sm pointer-events-none">
                                             After
                                         </div>
-                                    </div>
-
-                                    {/* Overlay on Hover */}
-                                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                        
+                                        {/* Expand Button */}
                                         <button
-                                            onClick={() => setSelectedImage(item)}
-                                            className="bg-[#C99A6B] text-white px-6 py-2 rounded-full font-semibold hover:bg-[#b8894f] transition-colors"
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                setSelectedImage(item);
+                                            }}
+                                            className="absolute bottom-4 right-4 bg-black/30 border border-white/20 text-white p-2.5 rounded-full backdrop-blur-md shadow-sm hover:bg-black/50 hover:scale-110 transition-all z-20 opacity-0 group-hover:opacity-100 focus:opacity-100"
+                                            title="View Full Size"
                                         >
-                                            View Full Size
+                                            <Maximize2 className="w-4 h-4" />
                                         </button>
                                     </div>
                                 </div>
 
                                 {/* Card Info */}
-                                <div className="mt-4">
-                                    <p className="text-[#C99A6B] text-sm font-semibold">{item.service}</p>
-                                    <h3 className="text-lg font-semibold text-[#2B1D17]">{item.title}</h3>
+                                <div className="mt-5 text-center">
+                                    <p className="text-[#C99A6B] text-[11px] uppercase tracking-widest font-semibold mb-1">{item.service}</p>
+                                    <h3 className="text-[17px] font-serif font-bold text-[#2B1D17]">{item.title}</h3>
                                 </div>
                             </div>
                         ))}
@@ -282,22 +284,22 @@ export const BeautyTransformationsSection = () => {
 
                             {/* Modal Slider Handle */}
                             <div
-                                className="absolute top-0 bottom-0 w-1 bg-white pointer-events-none"
+                                className="absolute top-0 bottom-0 w-[2px] bg-white/80 shadow-[0_0_15px_rgba(0,0,0,0.5)] pointer-events-none"
                                 style={{
                                     left: `${modalSliderPosition}%`,
                                 }}
                             >
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full p-3 shadow-lg flex items-center justify-center">
-                                    <ChevronLeft className="w-5 h-5 text-[#C99A6B] absolute left-1" />
-                                    <ChevronRight className="w-5 h-5 text-[#C99A6B] absolute right-1" />
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/90 backdrop-blur-md rounded-full w-12 h-12 flex items-center justify-center shadow-[0_4px_16px_rgba(0,0,0,0.3)] border-2 border-white/50">
+                                    <ChevronLeft className="w-5 h-5 text-[#8B5E3C] -mr-[2px]" />
+                                    <ChevronRight className="w-5 h-5 text-[#8B5E3C] -ml-[2px]" />
                                 </div>
                             </div>
 
                             {/* Modal Labels */}
-                            <div className="absolute top-6 left-6 bg-black/60 text-white px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-sm pointer-events-none">
+                            <div className="absolute top-6 left-6 bg-black/40 border border-white/20 text-white px-5 py-2 rounded-full text-xs uppercase tracking-widest font-semibold backdrop-blur-md shadow-sm pointer-events-none">
                                 Before
                             </div>
-                            <div className="absolute top-6 right-6 bg-[#C99A6B]/90 text-white px-4 py-2 rounded-full text-sm font-semibold backdrop-blur-sm pointer-events-none">
+                            <div className="absolute top-6 right-6 bg-[#C99A6B]/80 border border-white/20 text-white px-5 py-2 rounded-full text-xs uppercase tracking-widest font-semibold backdrop-blur-md shadow-sm pointer-events-none">
                                 After
                             </div>
                         </div>
