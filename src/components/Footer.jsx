@@ -9,7 +9,7 @@ export const Footer = () => (
                 <div className="grid md:grid-cols-4 gap-8 mb-8">
                     {/* Brand */}
                     <div className="space-y-4">
-                        <img src={logoImage} alt="Glam Beauty Studio Logo" className="h-16 w-auto object-contain rounded-full bg-white p-1" />
+                        <img src={logoImage} alt="Glam Beauty Studio Logo" className="h-20 lg:h-24 w-auto object-contain rounded-full bg-white p-1" />
                         <p className="text-background/80 text-sm">
                             Your premier destination for professional beauty services. Transform your look with our expert team.
                         </p>
